@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sxhdw</title>
+  <%= stylesheet_link_tag ['reset', 'common'] %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div class="wrap">
+		<div id="header">
+			<div id="header_top">
+				<div id="logo"><%= image_tag("logo.gif") %></div>
+				<div id="hot_tags">
+					<ul>
+						<li class="hot"><%= link_to "测试", "/" %><span><%= image_tag "new.gif" %></span></li>
+						<li><%= link_to "测试", "/" %></li>
+						<li><%= link_to "测试", "/" %></li>
+						<li><%= link_to "测试", "/" %></li>
+					</ul>
+				</div>
+				<% if current_user %>
+					<%= render :partial => "widget/smemberinfo"%>
+				<% else %>
+					<%= render :partial => "widget/sloginform" %>
+				<% end %>
+			</div>
+			<div class="clear"></div>
+			<div id="main_nav">
+				<ul>
+					<li><%= link_to t("navigation.Home"), "/" %></li>
+					<li><%= link_to t("navigation.Forum") %></li>
+				</ul>
+				<div id="sub_nav"></div>
+			</div>
+			<%= render :partial => "widget/search"%>
+		</div><!-- header -->
+		<div class="clear"></div>
+	</div>
+	<div id="message" class="wrap">
+		<% unless flash[:error].blank? %>
+			<div class="msg error"><%= flash[:error] %></div>
+		<% end %>
+		<% unless flash[:success].blank? %>
+			<div class="msg success"><%= flash[:success] %></div>
+		<% end %>
+		<% unless flash[:warn].blank? %>
+			<div class="msg warning"><%= flash[:warn] %></div>
+		<% end %>
+		<% unless flash[:info].blank? %>
+			<div class="msg info"><%= flash[:info] %></div>
+		<% end %>
+	</div>
+	<div class="wrap">
+		<%= yield %>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
