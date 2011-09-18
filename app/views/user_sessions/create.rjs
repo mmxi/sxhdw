@@ -1,0 +1,11 @@
+if @login_success
+  page["slogin_form"].visual_effect :blind_up
+  page.delay(1) do
+    page["slogin_form"].replace :partial => "widget/smemberinfo"
+  end
+  page.delay(1) do
+    page["smemberinfo"].visual_effect :highlight
+  end
+else
+  page.alert("登录失败")
+end
