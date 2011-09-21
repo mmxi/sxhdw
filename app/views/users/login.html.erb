@@ -1,0 +1,26 @@
+<% username = session[:omniauth]["user_info"]["name"] %>
+<h2 class="ml10 mb10"><%= t("form.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h2>
+<div id="signup_box" class="p40">
+	<div class="userbind_inner">
+		<div id="userbind_top">
+			<div class="img">
+				<%= image_tag get_oauth_user_image(session[:omniauth]), :class => "fl", :width => 48, :height => 48 %>
+			</div>
+			<h3><%= username %>，只差一步，就可以完成登录！</h3>	
+		</div>
+		<div id="userbind_content">
+			<div class="login_form">
+				<% @user_action_type = "login" %>
+				<%= form_for User.new(:login => generate_user_bindid(session[:omniauth]), :nickname => username), :url => "/user/login" do |f| %>
+					<ul>
+						<li><%= f.label :login %><%= f.text_field :login, :class => "inputField" %></li>
+						<li><%= f.label :nickname %><%= f.text_field :nickname, :class => "inputField" %></li>
+						<li><%= f.label :email %><%= f.text_field :email, :class => "inputField" %></li>
+						<li class="indent"><span class="btns btn7"><%= f.submit t("form.Bind immediately") %></span></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

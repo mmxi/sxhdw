@@ -1,0 +1,18 @@
+<h1><%= t("form.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h1>
+<div id="signup_box">
+	<div id="signup_box_inner">
+		<div id="userbind">
+			<%#= debug session[:omniauth] %>
+			<% if session[:omniauth]["provider"] == "qzone" %>
+				<%= image_tag session[:omniauth]["user_info"]["urls"]["figureurl_1"], :width => 48, :height => 48 %>
+			<% else %>
+				<%= image_tag session[:omniauth]["user_info"]["image"], :width => 48, :height => 48 %>
+			<% end %>
+			
+			<h2><%= session[:omniauth]["user_info"]["name"]%>,只差一步,就可以完成登录！</h2>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+</div>
+

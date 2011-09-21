@@ -1,19 +1,17 @@
-<h1>Login</h1>
-<%= form_for(@user_session) do |f| %>
-<div>
-  <%= f.label :login %>
-  <%= f.text_field :login %>
+<h1><%= t("form.User login")%></h1>
+<div id="login_box">
+	<div id="login_box_inner">
+		<% @user_action_type = "login" %>
+		<%= form_for(@user_session) do |f| %>
+			<ul>
+				<li><%= f.label :login %><%= f.text_field :login, :class => "inputField" %></li>
+				<li><%= f.label :password %><%= f.password_field :password, :class => "inputField" %></li>
+				<li class="indent"><%= f.check_box :remember_me %><%= f.label :remember_me, :class => "remember_me" %></li>
+				<li class="indent"><span class="btns btn6"><%= f.submit t("form.Login") %></span></li>
+			</ul>
+		<% end %>
+	</div>
+	<div class="separator"></div>
+	<%= render :partial => "widget/oauth" %>
+	<div class="clear"></div>
 </div>
-<div>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</div>
-<div>
-  <%#= f.check_box :remeber_me %>
-  <%#= f.label :remeber_me %>
-</div>
-<div>
-  <%= f.submit "login" %>
-</div>
-  
-<% end %>

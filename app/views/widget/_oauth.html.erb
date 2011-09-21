@@ -1,0 +1,16 @@
+<div class="other_login">
+	<% if @user_action_type == "login" %>
+		<h3>还没有活动网帐号，<%= link_to "注册活动网用户", "/signup" %></h3>
+	<% elsif @user_action_type == "register" %>
+		<h3>已经拥有活动网帐号，<%= link_to "从这里登录", "/login" %></h3>
+	<% end %>
+	<h4>你也可以通过站外账号进行登录！</h4>
+	<ul>
+		<li class="sina"><%= link_to "", "/auth/tsina", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
+		<li class="qq"><%= link_to "", "/auth/tqq", :class => "popup", :"data-width" => 800, :"data-height" => 600 %></li>
+		<li class="renren"><%= link_to "", "/auth/renren", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
+		<li class="qzone"><%= link_to "", "/auth/qzone", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
+		<li class="google"><%= link_to "", "/auth/google", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
+		<li class="douban"><%= link_to "", "/auth/douban", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
+	</ul>
+</div>

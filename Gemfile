@@ -6,6 +6,15 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'authlogic'
+gem 'ruby-debug'
+
+#OAuthgem
+gem 'oa-oauth', '0.2.6'
+gem 'omniauth', '0.2.6'
+gem 'oa-openid', '0.2.6'
+gem 'omniauth_china', '0.1.1'
+gem "gravatar_image_tag", "~> 1.0.0"
 
 # Use unicorn as the web server
 # gem 'unicorn'

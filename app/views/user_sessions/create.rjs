@@ -1,11 +1,16 @@
 if @login_success
-  page["slogin_form"].visual_effect :blind_up
+  #page["slogin_form"].visual_effect :blind_up
   page.delay(1) do
-    page["slogin_form"].replace :partial => "widget/smemberinfo"
+    page[:slogin_form].replace :partial => "widget/smemberinfo"
   end
   page.delay(1) do
-    page["smemberinfo"].visual_effect :highlight
+    page[:smemberinfo].visual_effect :highlight
   end
+  #page.select(".msg").each { |b| b.hide }
+  #page[:message].replace_html "<div class=\"msg success\">#{flash[:success]}</div>"
+  #page.delay(2) do
+  #  page.select(".msg").each { |b| b.hide }
+  #end
 else
-  page.alert("登录失败")
+  page.redirect_to "/login"
 end

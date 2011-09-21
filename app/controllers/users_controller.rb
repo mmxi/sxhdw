@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_no_user, :only => [:new, :create, :bind, :login]
   before_filter :require_user, :only => [:show, :edit, :update]
+  layout "home"
 
   def new
     @user = User.new
@@ -31,6 +32,30 @@ class UsersController < ApplicationController
       redirect_to account_url
     else
       render :action => :edit
+    end
+  end
+  
+  def auth_callback
+    auth = request.env["omniauth.auth"]
+    redirect_to root_path if auth.blank?
+    @auth = auth
+  end
+  
+  def bind
+    #no login with oauth redirect to root_url
+    if session[:omniauth].blank?
+      redirect_to root_url
+    end
+  end
+  
+  def login
+    if session[:omniauth].blank?
+      redirect_to root_url
+    end
+    
+    if request.post?
+      
+      logger.debug "0000000000000000000000000000000000000000000000000000000"
     end
   end
 end

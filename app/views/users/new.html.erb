@@ -1,0 +1,19 @@
+<h1><%= t("form.User register")%></h1>
+<div id="signup_box">
+	<div id="signup_box_inner">
+		<% @user_action_type = "register" %>
+		<%= form_for(@user) do |f| %>
+			<ul>
+				<li><%= f.label :login %><%= f.text_field :login, :class => "inputField" %></li>
+				<li><%= f.label :email %><%= f.text_field :email, :class => "inputField" %></li>
+				<li><%= f.label :password %><%= f.password_field :password, :class => "inputField" %></li>
+				<li><%= f.label :password_confirmation %><%= f.password_field :password_confirmation, :class => "inputField" %></li>
+				
+				<li class="indent"><span class="btns btn6"><%= f.submit t("form.Register") %></span></li>
+			</ul>
+		<% end %>
+	</div>
+	<div class="separator"></div>
+	<%= render :partial => "widget/oauth" %>
+	<div class="clear"></div>
+</div>

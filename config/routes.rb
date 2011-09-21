@@ -2,10 +2,16 @@ Sxhdw::Application.routes.draw do
   
   resources :user_sessions
   resource :account, :controller => "users"
+  resource :users
 
   match '/signup' => "users#new"
   match '/login' => "user_sessions#new",      :as => :login
   match '/logout' => "user_sessions#destroy", :as => :logout
+  
+  match "auth/:provider/callback", :to => "authorizations#create"
+  match "auth/failure", :to => "authorizations#failure"
+  match "user/bind", :to => "users#bind"
+  match "user/login", :to => "users#login"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,12 +1,30 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :generate_user_bindid, :get_oauth_user_image
   
   # Start of declaration_authorization-related code
   #before_filter :set_current_user
 
   private
+    def generate_user_bindid(oauth)
+      session[:omniauth]["provider"] + session[:omniauth]["uid"].to_s
+    end
+    
+    def get_oauth_user_image(oauth)
+      provider = session[:omniauth]["provider"]
+      user_image = "" 
+      
+      if provider == "qzone"
+        user_image = session[:omniauth]["user_info"]["urls"]["figureurl_1"]
+      elsif provider == "tqq"
+        user_image = session[:omniauth]["user_info"]["image"] + "/50"
+      else
+        user_image = session[:omniauth]["user_info"]["image"]
+      end
+      user_image
+    end
+    
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
       return @current_user_session if defined?(@current_user_session)

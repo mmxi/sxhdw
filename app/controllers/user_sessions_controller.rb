@@ -1,18 +1,17 @@
-require "pp"
 class UserSessionsController < ApplicationController
   layout "home"
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
 
   def new
-    @user_session = UserSession.new
+    @user_session = UserSession.new(:remember_me => true)
   end
 
   def create
     @user_session = UserSession.new(params[:user_session])
     @login_success = false
     if @user_session.save
-      flash[:notice] = "Login successful!"
+      flash[:success] = t("form.Login successful")
       @login_success = true
       respond_to do |wants|
         wants.js {
@@ -21,6 +20,7 @@ class UserSessionsController < ApplicationController
         wants.html { redirect_back_or_default("/") }
       end
     else
+      flash[:error] = t("form.Login failed")
       #redirect_back_or_default("/login")
       respond_to do |wants|
         wants.js {  }

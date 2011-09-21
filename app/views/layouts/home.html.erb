@@ -10,7 +10,7 @@
 	<div class="wrap">
 		<div id="header">
 			<div id="header_top">
-				<div id="logo"><%= image_tag("logo.gif") %></div>
+				<h1 id="logo"><%= image_tag("logo.gif") %></h1>
 				<div id="hot_tags">
 					<ul>
 						<li class="hot"><%= link_to "测试", "/" %><span><%= image_tag "new.gif" %></span></li>
@@ -47,13 +47,17 @@
 		<% unless flash[:warn].blank? %>
 			<div class="msg warning"><%= flash[:warn] %></div>
 		<% end %>
-		<% unless flash[:info].blank? %>
-			<div class="msg info"><%= flash[:info] %></div>
+		<% unless flash[:notice].blank? %>
+			<div class="msg info"><%= flash[:notice] %></div>
 		<% end %>
 	</div>
-	<div class="wrap">
+	<div id="content" class="wrap">
 		<%= yield %>
 	</div>
-	<div id="footer"></div>
+	<div class="clear"></div>
+	<div id="footer_wrap">
+		<div id="footer_top"></div>
+		<div id="footer" class="wrap"></div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,40 @@
+cn:
+  navigation:
+    Home: "首页"
+    Forum:  "论坛"
+  form:
+    Register: "注册"
+    Login:  "登录"
+    Remember me: "记住我"
+    Forgot password:  "忘记密码"
+    Exit: "退出"
+    Login failed: "登录失败"
+    Login successful: "登录成功"
+    User login: "用户登录"
+    User register:  "注册活动网帐号"
+    User bind:  "您正在通过%{provider}账号登陆绍兴活动网"
+    Bind immediately: "立即绑定"
+  labels:
+    login:  "用户名："
+    nickname: "昵称："
+    email:  "邮箱地址："
+  helpers:
+    label:
+      user_session:
+        login:  "登录帐号："
+        password: "登录密码："
+        remember_me:  "记住我"
+        commit: "登录"
+      user:
+        login:  "用户名："
+        nickname: "昵称："
+        email:  "邮箱地址："
+        password: "密码："
+        password_confirmation:  "确认密码："
+  oauth:
+    tsina:  "新浪微博"
+    renren: "人人网"
+    tqq: "腾讯微博"
+    qzone:  "QQ"
+    douban: "豆瓣网"
+    google: "Google"
