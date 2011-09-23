@@ -1,22 +1,21 @@
-<% username = session[:omniauth]["user_info"]["name"] %>
-<h2 class="ml10 mb10"><%= t("form.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h2>
-<div id="signup_box" class="p40">
+<h2><%= t("form.userlogin.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h2>
+<div class="cbox p40">
 	<div class="userbind_inner">
 		<div id="userbind_top">
 			<div class="img">
 				<%= image_tag get_oauth_user_image(session[:omniauth]), :class => "fl", :width => 48, :height => 48 %>
 			</div>
-			<h3><%= username %>，只差一步，就可以完成登录！</h3>	
+			<h3><%= @user.nickname %>，只差一步，就可以完成登录！</h3>	
 		</div>
+		<div class="desc"><h4>填写下面资料，即可同时使用您的第三方网站账号登录本网站，^_^</h4></div>
 		<div id="userbind_content">
-			<div class="login_form">
-				<% @user_action_type = "login" %>
-				<%= form_for User.new(:login => generate_user_bindid(session[:omniauth]), :nickname => username), :url => "/user/login" do |f| %>
+			<div class="signup_box">
+				<%= form_for @user, :url => "/user/login", :validate => true do |f| %>
 					<ul>
-						<li><%= f.label :login %><%= f.text_field :login, :class => "inputField" %></li>
-						<li><%= f.label :nickname %><%= f.text_field :nickname, :class => "inputField" %></li>
-						<li><%= f.label :email %><%= f.text_field :email, :class => "inputField" %></li>
-						<li class="indent"><span class="btns btn7"><%= f.submit t("form.Bind immediately") %></span></li>
+						<li><span class="label"><%= t("form.userlogin.Nickname") %></span><%= f.text_field :nickname, :class => "inputField" %></li>
+						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField" %></li>
+						<li class="indent"><%= f.submit t("form.userlogin.Bind immediately"), :class => "button bbutton" %></li>
+						<li class="indent">或者，<%= link_to t("message.I have already account, bind account"), "/user/bind", :class => "color6B8E00" %></li>
 					</ul>
 				<% end %>
 			</div>

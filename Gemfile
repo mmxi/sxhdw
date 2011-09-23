@@ -14,7 +14,13 @@ gem 'oa-oauth', '0.2.6'
 gem 'omniauth', '0.2.6'
 gem 'oa-openid', '0.2.6'
 gem 'omniauth_china', '0.1.1'
-gem "gravatar_image_tag", "~> 1.0.0"
+gem 'gravatar_image_tag', '~> 1.0.0'
+gem 'jquery-rails'
+gem 'factory_girl', '~> 2.1.0'
+gem 'factory_girl_rails', '~> 1.2.0'
+gem 'rspec-rails'
+gem 'client_side_validations'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

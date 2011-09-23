@@ -9,26 +9,11 @@ class AuthorizationsController < ApplicationController
     if current_user
       flash[:notice] = "Successfully added #{omniauth['provider']} authentication"
       current_user.authorizations.create(:provider => omniauth['provider'], :uid => omniauth['uid']) #Add an auth to existing user
-      #redirect_to edit_user_path(:current)
-      #redirect_to root_url
     elsif @auth
       logger.debug "=========Authorizations create elsif ===================="
       flash[:notice] = "Welcome back #{omniauth['provider']} user"
       UserSession.create(@auth.user, true) #User is present. Login the user with his social account
-      #redirect_to root_url
     else
-      logger.debug "=========Authorizations create else ===================="
-      logger.debug omniauth["uid"]
-      logger.debug omniauth["user_info"]["name"]
-      logger.debug omniauth["user_info"]["image"]
-      logger.debug omniauth["user_info"]["user_info"]
-      logger.debug omniauth
-      #first login through oauth
-      #@new_auth = Authorization.create_from_hash(omniauth, current_user) #Create a new user
-      #bind to site user
-      #flash[:notice] = "Welcome #{omniauth['provider']} user. Your account has been created."
-      #UserSession.create(@new_auth.user, true) #Log the authorizing user in.
-      #redirect_to root_url
       session[:omniauth] = omniauth
       @redirect_to = "/user/login"
     end

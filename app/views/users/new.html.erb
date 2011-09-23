@@ -1,19 +1,16 @@
-<h1><%= t("form.User register")%></h1>
-<div id="signup_box">
-	<div id="signup_box_inner">
+<h2><%= t("form.signup.User register")%></h2>
+<div class="cbox p40">
+	<div class="signup_box fl">
 		<% @user_action_type = "register" %>
-		<%= form_for(@user) do |f| %>
+		<%= form_for(@user, :validate => true) do |f| %>
 			<ul>
-				<li><%= f.label :login %><%= f.text_field :login, :class => "inputField" %></li>
-				<li><%= f.label :email %><%= f.text_field :email, :class => "inputField" %></li>
-				<li><%= f.label :password %><%= f.password_field :password, :class => "inputField" %></li>
-				<li><%= f.label :password_confirmation %><%= f.password_field :password_confirmation, :class => "inputField" %></li>
-				
-				<li class="indent"><span class="btns btn6"><%= f.submit t("form.Register") %></span></li>
+				<li><span class="label"><%= t("form.signup.Email") %></span><%= f.text_field :email, :class => "inputField" %><span class="need">*</span></li>
+				<li><span class="label"><%= t("form.signup.Password") %></span><%= f.password_field :password, :class => "inputField" %><span class="need">*至少6个字符</span></li>
+				<li><span class="label"><%= t("form.signup.Password confirmation") %></span><%= f.password_field :password_confirmation, :class => "inputField" %><span class="need">*</span></li>				
+				<li class="indent"><%= f.submit t("form.signup.Submit"), :class => "button bbutton" %></li>
 			</ul>
 		<% end %>
 	</div>
-	<div class="separator"></div>
 	<%= render :partial => "widget/oauth" %>
 	<div class="clear"></div>
 </div>

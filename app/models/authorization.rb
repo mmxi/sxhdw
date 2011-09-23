@@ -1,3 +1,4 @@
+include ApplicationHelper
 class Authorization < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :user_id, :uid, :provider
@@ -8,7 +9,7 @@ class Authorization < ActiveRecord::Base
   end
 
   def self.create_from_hash(hash, user = nil)
-    user ||= User.create_from_hash(hash)
-    Authorization.create(:user_id => user.id, :uid => hash['uid'], :provider => hash['provider'])
+    #user ||= User.create_from_hash(hash)
+    Authorization.create(:user_id => user.id, :uid => hash['uid'], :provider => hash['provider'], :image => get_oauth_user_image(hash))
   end
 end

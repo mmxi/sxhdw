@@ -3,7 +3,7 @@
 	<div id="slogin_form_top">
 		<ul>
 			<li><%= f.check_box :remember_me %><%= f.label :remember_me %></li>
-			<li><%= link_to t("form.Forgot password") %></li>
+			<li><%= link_to t("form.login.Forgot password") %></li>
 			<li><%= link_to t("form.Register"), "/signup", :class => "btn_5" %></li>
 		</ul>
 	</div>
@@ -17,9 +17,9 @@
 		}
 	</script>
 	<div class="log_box">
-		<%= f.text_field :login, :class => "id_input", :onfocus => "javascript:check_input(this);", :onblur => "javascript:check_input1(this);" %>
+		<%= f.text_field :email, :class => "id_input", :onfocus => "javascript:check_input(this);", :onblur => "javascript:check_input1(this);" %>
 		<%= f.password_field :password, :class => "pw_input", :onfocus => "javascript:check_input(this);", :onblur => "javascript:check_input1(this);" %>
-		<span class="btns btn1"><%= f.submit t("form.Login"), :class => "btn" %></span>
+		<%= f.submit t("form.login.Submit"), :class => "button mbutton" %>
 	</div>
 	<% end %>
 </div>

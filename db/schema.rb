@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920090816) do
+ActiveRecord::Schema.define(:version => 20110923122523) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110920090816) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "sessions", :force => true do |t|
@@ -31,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20110920090816) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "login"
     t.string   "nickname"
     t.string   "email"
     t.string   "crypted_password"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20110920090816) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token", :unique => true
 
 end

@@ -1,18 +1,25 @@
-<h1><%= t("form.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h1>
-<div id="signup_box">
-	<div id="signup_box_inner">
-		<div id="userbind">
-			<%#= debug session[:omniauth] %>
-			<% if session[:omniauth]["provider"] == "qzone" %>
-				<%= image_tag session[:omniauth]["user_info"]["urls"]["figureurl_1"], :width => 48, :height => 48 %>
-			<% else %>
-				<%= image_tag session[:omniauth]["user_info"]["image"], :width => 48, :height => 48 %>
-			<% end %>
-			
-			<h2><%= session[:omniauth]["user_info"]["name"]%>,只差一步,就可以完成登录！</h2>
+<h2><%= t("form.userlogin.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h2>
+<div class="cbox p40">
+	<div class="userbind_inner">
+		<div id="userbind_top">
+			<div class="img">
+				<%= image_tag get_oauth_user_image(session[:omniauth]), :class => "fl", :width => 48, :height => 48 %>
+			</div>
+			<h3><%= @user.nickname %>，只差一步，就可以完成登录！</h3>
 		</div>
-
+		<div class="desc"><h4>绑定活动网帐号，即可同时使用您的第三方网站账号登录本网站，^_^</h4></div>
+		<div id="userbind_content">
+			<div class="signup_box">
+				<%= form_for UserSession.new, :url => "/user/bind" do |f| %>
+					<ul>
+						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField" %></li>
+						<li><span class="label"><%= t("form.userlogin.Password") %></span><%= f.password_field :password, :class => "inputField" %></li>
+						<li class="indent"><%= f.submit t("form.userlogin.Bind immediately"), :class => "button bbutton" %></li>
+						<li class="indent">或者，<%= link_to t("message.Bind new account"), "/user/login", :class => "color6B8E00" %></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
 	</div>
 	<div class="clear"></div>
 </div>
-

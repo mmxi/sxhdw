@@ -11,16 +11,16 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     @login_success = false
     if @user_session.save
-      flash[:success] = t("form.Login successful")
-      @login_success = true
+      flash[:success] = t("message.Login successful")
       respond_to do |wants|
         wants.js {
+          @login_success = true
           @user = (UserSession.find).user
         }
-        wants.html { redirect_back_or_default("/") }
+        wants.html { redirect_to "/" }
       end
     else
-      flash[:error] = t("form.Login failed")
+      flash[:error] = t("message.Login failed")
       #redirect_back_or_default("/login")
       respond_to do |wants|
         wants.js {  }
@@ -31,7 +31,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = "Logout successful!"
-    redirect_back_or_default new_user_session_url
+    #flash[:notice] = "Logout successful!"
+    redirect_to "/login"
   end
 end

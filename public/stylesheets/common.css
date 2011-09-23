@@ -10,7 +10,7 @@ h2{	font-size: 1.6em; }
 h3{	font-size: 1.4em; }
 h4{	font-size: 1.2em; }
 h5{	font-size: 1em; }
-
+.color6B8E00{ color: #6B8E00; }
 .tc{ text-align: center; }
 .center{ margin: 0 auto; }
 .wrap{	width: 960px; margin: 0 auto; clear: both; }
@@ -103,74 +103,10 @@ h5{	font-size: 1em; }
 	
 }
 /* buttons */
-.btns{ zoom:1; }
-.btns *{ outline:0; zoom:1; }
-.btns input{ border: none; cursor: pointer; background: transparent; padding:0; }
-.btns input::-moz-focus-inner{ border-color:transparent!important; }
-
-.btn1{
-	display: inline-block;
-	width: 61px;
-	height: 20px;
-	background: url(../images/btn_4.gif) no-repeat;
-	color: #000000;
-	text-align: center;
-}
-.btn1 *{
-	width: 61px;
-	height: 20px;
-	line-height: 20px;
-	font-size: 14px;
-	text-align: center;
-	color: #000000;
-}
-
-.btn6{
-	display: inline-block;
-	width: 88px;
-	height: 23px;
-	background: url(../images/btn_6.gif) no-repeat;
-	color: #000000;
-	text-align: center;
-}
-.btn6 *{
-	width: 88px;
-	height: 23px;
-	line-height: 20px;
-	font-size: 14px;
-	text-align: center;
-	color: #FFFFFF;
-}
-
-a.btn_5{
-	width: 44px;
-	height: 19px;
-	line-height: 19px;
-	background: url(../images/btn_5.gif) no-repeat;
-	color: #FFFFFF;
-	text-align: center;
-}
-
-.btn7{
-	display: inline-block;
-	width: 130px;
-	height: 32px;
-	background: url(../images/btn_7.gif) no-repeat;
-	color: #000000;
-	text-align: center;
-}
-.btn7 *{
-	width: 130px;
-	height: 32px;
-	line-height: 20px;
-	font-size: 14px;
-	text-align: center;
-	color: #FFFFFF;
-}
-
-
-
-
+.button { outline:0; zoom:1; background: url("../images/button.gif") repeat-x scroll 0 0 #52801F; color: #FFFFFF; text-shadow: 1px 1px 0 #2F5D0B;  border: 1px solid #386B00; cursor: pointer;   border-radius: 5px 5px 5px 5px;}
+input.button::-moz-focus-inner{ border-color:transparent!important; }
+.bbutton { font-size: 1em; font-weight: bold; padding: 5px 9px;}
+.mbutton { font-size: 1em; font-weight: bold; padding: 1px 9px;}
 
 /* message */
 .msg{
@@ -262,6 +198,10 @@ a.btn_5{
 	font-size:12px;
 	color: #5F635E;
 }
+span.label{
+	font-size:12px;
+	color: #5F635E;
+}
 #slogin_form_top a.btn_5{
 	color: #FFFFFF;
 }
@@ -326,31 +266,23 @@ a.btn_5{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+#content h2{
+	margin-bottom:10px;
+}
 
 /* login */
-#login_box, #signup_box{
+.cbox{
 	border: 7px solid #e0e0e0;
 	border-radius: 5px;
 }
-#login_box{ height: 165px; }
-#signup_box { height: 195px; }
-#login_box li, #signup_box li{
-	margin-bottom: 10px;
-}
-#login_box li.indent, #signup_box li.indent{
-	padding-left: 80px;
-}
-#login_box label, #signup_box label{
-	display: inline-block;
-	font-size: 12px;
-	font-weight: 700;
-	color: #5F635E;
-	width: 80px;
-	text-align: right;
-}#login_box label.remember_me{
-	width:auto;
-}
-#login_box .inputField, #signup_box .inputField{
+.field_with_errors{ float: left; }
+.signup_box{ width: 400px; padding-top: 20px; }
+.signup_box span.label{ float: left; display: block; width: 80px; text-align: right; height: 22px; line-height: 22px; }
+.signup_box span.need{ float: left; display:block; width:110px; height:22px; line-height:22px; color:#FF0000; padding-left:10px;}
+.signup_box li{ height: 20px; }
+.signup_box .inputField{
+	display: block;
+	float: left;
 	width: 180px;
 	height: 22px;
 	line-height: 22px;
@@ -358,23 +290,40 @@ a.btn_5{
 	border: 1px solid #DAD6D3;
 	background: #F7F7F7;
 }
-#login_box_inner, #signup_box_inner{
-	float: left;
-	width: 300px;
-	margin: 30px 0px 0px 40px;
+.signup_box .field_with_errors{ width: 186px; height: 50px; }
+.signup_box .field_with_errors label.message{ float: left; display: block; width: 200px;　height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
+
+.signup_box li{
+	display: block;
+	height: 50px;
 }
-#login_box_inner li, #signup_box_inner li{
-	height: 22px;
+.signup_box li.indent{
+	padding-left:80px;
 }
+.login_box{
+	padding-top: 30px;
+}
+.login_box li{
+	height: 44px;
+}
+.login_box li.indent{
+	height: 25px;
+}
+
+
 .other_login{
 	float: left;
-	width: 500px;
+	width: 325px;
 	padding: 20px 0px 0px 40px;
 }
+.other_login h4{
+	margin-bottom: 10px;
+}
 .other_login li{
-	width: 124px;
+	width: 150px;
 	height: 24px;
 	margin-right: 10px;
+	margin-bottom: 20px;
 	float: left;
 }
 .other_login li a{
@@ -405,7 +354,6 @@ a.btn_5{
 	color: #111111;
 	font-size: 1.5em;
 	margin-bottom: 10px;
-	padding-left: 10px;
 }
 .other_login h3 a{
 	color: #4F790B;

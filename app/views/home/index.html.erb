@@ -1,7 +1,6 @@
 <%= link_to "Home", root_path %>
 <%= debug current_user %>
 <% if current_user %>
-	<%= current_user.login %>
 	<%= gravatar_image_tag current_user.email %>
 <% end %>
 <%= link_to "testajax", { :action => "testajax"}, :remote => true, :id => "aaa" %>
