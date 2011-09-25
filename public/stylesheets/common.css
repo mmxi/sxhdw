@@ -1,5 +1,5 @@
 body{ background: url(../images/body_bg.gif) repeat-x; font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif; }
-body *{	font-size: 12px; }
+body {	font-size: 10px; }
 a{ font-size: 12px;	display: inline-block; text-decoration: none; }
 input{ display: inline-block; margin: 0px; padding: 0px; vertical-align: middle; }
 h1{	font-size: 1.8em; }
@@ -92,6 +92,13 @@ h5{	font-size: 1em; }
 .inner_box50 { padding: 50px; }
 span em{ color: #FE0000; font-weight: bold; }
 
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+
 /* buttons */
 .button { outline:0; zoom:1; background: url("../images/button.gif") repeat-x scroll 0 0 #52801F; color: #FFFFFF; text-shadow: 1px 1px 0 #2F5D0B;  border: 1px solid #386B00; cursor: pointer;   border-radius: 5px 5px 5px 5px;}
 input.button::-moz-focus-inner{ border-color:transparent!important; }
@@ -106,7 +113,7 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 .info{ background: url("../images/info.gif") no-repeat scroll 20px 50% #C3E4FD; border: 1px solid #688FDC; color: #0888C3; }
 
 /* form */
-.inputField, .inputField_ss, .inputField_s, .inputField_m, .inputField_b{ display: block; float: left; height: 22px; line-height: 22px; padding-left: 4px; border: 1px solid #DAD6D3; background: #F7F7F7; }
+.inputField, .inputField_ss, .inputField_s, .inputField_m, .inputField_b, .inputField_bb{ display: block; float: left; height: 22px; line-height: 22px; padding-left: 4px; border: 1px solid #DAD6D3; background: #F7F7F7; }
 .inputField_ss{ width: 50px; }
 .inputField_s{ width: 100px; }
 .inputField_m{ width: 200px; }
@@ -114,12 +121,12 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 .inputField_bb{ width: 500px; }
 span.label{ float: left; display: block; width: 80px; text-align: right; height: 22px; line-height: 22px; font-size:12px; color: #5F635E; }
 span.need{ float: left; display:block; height:22px; line-height:22px; color:#FF0000; padding-left:10px;}
+span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: right; height: 22px; line-height: 22px; font-size:12px; color: #5F635E; }
 .field_with_errors{ float: left; display:block; height: 50px; }
 .field_with_errors label.message{ clear:both; display: block; height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
 .form li{ height: 20px; }
 .form li{	display: block;	height: 50px; }
 .form li.indent{ padding-left:80px; }
-
 
 #header{
 }
