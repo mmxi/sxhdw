@@ -1,7 +1,4 @@
-body{
-	background: url(../images/body_bg.gif) repeat-x;
-	font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif;
-}
+body{ background: url(../images/body_bg.gif) repeat-x; font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif; }
 body *{	font-size: 12px; }
 a{ font-size: 12px;	display: inline-block; text-decoration: none; }
 input{ display: inline-block; margin: 0px; padding: 0px; vertical-align: middle; }
@@ -15,6 +12,7 @@ h5{	font-size: 1em; }
 .center{ margin: 0 auto; }
 .wrap{	width: 960px; margin: 0 auto; clear: both; }
 .clear{ clear:both; margin:0;padding:0; font-size:1px; }
+.w50{ width: 50px; }
 .w100{ width: 100px; }
 .w200{ width: 200px; }
 .w300{ width: 300px; }
@@ -92,16 +90,8 @@ h5{	font-size: 1em; }
 .inner_box30 { padding: 30px; }
 .inner_box40 { padding: 40px; }
 .inner_box50 { padding: 50px; }
+span em{ color: #FE0000; font-weight: bold; }
 
-/* separator */
-.separator{
-	float: left;
-	width: 5px;
-	height:100%;
-	margin: 0px 5px;
-	background: #e0e0e0;
-	
-}
 /* buttons */
 .button { outline:0; zoom:1; background: url("../images/button.gif") repeat-x scroll 0 0 #52801F; color: #FFFFFF; text-shadow: 1px 1px 0 #2F5D0B;  border: 1px solid #386B00; cursor: pointer;   border-radius: 5px 5px 5px 5px;}
 input.button::-moz-focus-inner{ border-color:transparent!important; }
@@ -109,34 +99,28 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 .mbutton { font-size: 1em; font-weight: bold; padding: 1px 9px;}
 
 /* message */
-.msg{
-	display: block;
-	margin: 15px 5px;
-	padding: 10px 45px;
-	border-radius: 5px 5px 5px 5px;
-	font-size: 14px;
-	font-weight: bold;
-}
-.error{
-	background: url("../images/error.gif") no-repeat scroll 20px 50% #FDCEA4;
-    border: 1px solid #C44509;
-    color: #E3302C;
-}
-.success{
-	background: url("../images/success.gif") no-repeat scroll 20px 50% #D4F684;
-    border: 1px solid #739F1D;
-    color: #508600;
-}
-.warning{
-	background: url("../images/warning.gif") no-repeat scroll 20px 50% #FEFFC8;
-    border: 1px solid #F1AA2D;
-    color: #666666;
-}
-.info{
-	background: url("../images/info.gif") no-repeat scroll 20px 50% #C3E4FD;
-    border: 1px solid #688FDC;
-    color: #0888C3;
-}
+.msg{ display: block; margin: 15px 5px; padding: 10px 45px; border-radius: 5px 5px 5px 5px; font-size: 14px; font-weight: bold; }
+.error{	background: url("../images/error.gif") no-repeat scroll 20px 50% #FDCEA4; border: 1px solid #C44509; color: #E3302C; }
+.success{ background: url("../images/success.gif") no-repeat scroll 20px 50% #D4F684; border: 1px solid #739F1D; color: #508600; }
+.warning{ background: url("../images/warning.gif") no-repeat scroll 20px 50% #FEFFC8; border: 1px solid #F1AA2D; color: #666666; }
+.info{ background: url("../images/info.gif") no-repeat scroll 20px 50% #C3E4FD; border: 1px solid #688FDC; color: #0888C3; }
+
+/* form */
+.inputField, .inputField_ss, .inputField_s, .inputField_m, .inputField_b{ display: block; float: left; height: 22px; line-height: 22px; padding-left: 4px; border: 1px solid #DAD6D3; background: #F7F7F7; }
+.inputField_ss{ width: 50px; }
+.inputField_s{ width: 100px; }
+.inputField_m{ width: 200px; }
+.inputField_b{ width: 400px; }
+.inputField_bb{ width: 500px; }
+span.label{ float: left; display: block; width: 80px; text-align: right; height: 22px; line-height: 22px; font-size:12px; color: #5F635E; }
+span.need{ float: left; display:block; height:22px; line-height:22px; color:#FF0000; padding-left:10px;}
+.field_with_errors{ float: left; display:block; height: 50px; }
+.field_with_errors label.message{ clear:both; display: block; height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
+.form li{ height: 20px; }
+.form li{	display: block;	height: 50px; }
+.form li.indent{ padding-left:80px; }
+
+
 #header{
 }
 #header_top{
@@ -198,10 +182,7 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 	font-size:12px;
 	color: #5F635E;
 }
-span.label{
-	font-size:12px;
-	color: #5F635E;
-}
+
 #slogin_form_top a.btn_5{
 	color: #FFFFFF;
 }
@@ -271,44 +252,9 @@ span.label{
 }
 
 /* login */
-.cbox{
-	border: 7px solid #e0e0e0;
-	border-radius: 5px;
-}
-.field_with_errors{ float: left; }
+.cbox{ border: 7px solid #e0e0e0; border-radius: 5px; }
 .signup_box{ width: 400px; padding-top: 20px; }
-.signup_box span.label{ float: left; display: block; width: 80px; text-align: right; height: 22px; line-height: 22px; }
-.signup_box span.need{ float: left; display:block; width:110px; height:22px; line-height:22px; color:#FF0000; padding-left:10px;}
-.signup_box li{ height: 20px; }
-.signup_box .inputField{
-	display: block;
-	float: left;
-	width: 180px;
-	height: 22px;
-	line-height: 22px;
-	padding-left: 4px;
-	border: 1px solid #DAD6D3;
-	background: #F7F7F7;
-}
-.signup_box .field_with_errors{ width: 186px; height: 50px; }
-.signup_box .field_with_errors label.message{ float: left; display: block; width: 200px; height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
-
-.signup_box li{
-	display: block;
-	height: 50px;
-}
-.signup_box li.indent{
-	padding-left:80px;
-}
-.login_box{
-	padding-top: 30px;
-}
-.login_box li{
-	height: 44px;
-}
-.login_box li.indent{
-	height: 25px;
-}
+.login_box{ width: 400px; padding-top: 30px; }
 
 
 .other_login{
@@ -374,3 +320,24 @@ span.label{
 	border-top: 1px solid #e0e0e0;
 	border-bottom: 1px solid #e0e0e0;
 }
+
+#sider{
+	float: left;
+	width: 150px;
+	border: 1px solid #333333;
+}
+#main{
+	float: left;
+	width: 790px;
+	margin-left: 10px;
+	border: 1px solid #F2F2F2;
+	background: #ECEDEF;
+}
+.main_top{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.main_content{ margin-top: 20px; }
+.main_top span{ line-height: 1.6em; }
+.main_top span.desc{ color: #999999; }
+#main h2{ color: #2A2A2A; }

@@ -9,11 +9,11 @@
 		</div>
 		<div class="desc"><h4>填写下面资料，即可同时使用您的第三方网站账号登录本网站，^_^</h4></div>
 		<div id="userbind_content">
-			<div class="signup_box">
+			<div class="form signup_box">
 				<%= form_for @user, :url => "/user/login", :validate => true do |f| %>
 					<ul>
-						<li><span class="label"><%= t("form.userlogin.Nickname") %></span><%= f.text_field :nickname, :class => "inputField" %></li>
-						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField" %></li>
+						<li><span class="label"><%= t("form.userlogin.Nickname") %></span><%= f.text_field :nickname, :class => "inputField_m" %></li>
+						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField_m" %></li>
 						<li class="indent"><%= f.submit t("form.userlogin.Bind immediately"), :class => "button bbutton" %></li>
 						<li class="indent">或者，<%= link_to t("message.I have already account, bind account"), "/user/bind", :class => "color6B8E00" %></li>
 					</ul>

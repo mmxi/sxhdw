@@ -9,11 +9,11 @@
 		</div>
 		<div class="desc"><h4>绑定活动网帐号，即可同时使用您的第三方网站账号登录本网站，^_^</h4></div>
 		<div id="userbind_content">
-			<div class="signup_box">
+			<div class="form signup_box">
 				<%= form_for UserSession.new, :url => "/user/bind" do |f| %>
 					<ul>
-						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField" %></li>
-						<li><span class="label"><%= t("form.userlogin.Password") %></span><%= f.password_field :password, :class => "inputField" %></li>
+						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField_m" %></li>
+						<li><span class="label"><%= t("form.userlogin.Password") %></span><%= f.password_field :password, :class => "inputField_m" %></li>
 						<li class="indent"><%= f.submit t("form.userlogin.Bind immediately"), :class => "button bbutton" %></li>
 						<li class="indent">或者，<%= link_to t("message.Bind new account"), "/user/login", :class => "color6B8E00" %></li>
 					</ul>

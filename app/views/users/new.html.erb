@@ -1,12 +1,12 @@
 <h2><%= t("form.signup.User register")%></h2>
 <div class="cbox p40">
-	<div class="signup_box fl">
+	<div class="form signup_box fl">
 		<% @user_action_type = "register" %>
 		<%= form_for(@user, :validate => true) do |f| %>
 			<ul>
-				<li><span class="label"><%= t("form.signup.Email") %></span><%= f.text_field :email, :class => "inputField" %><span class="need">*</span></li>
-				<li><span class="label"><%= t("form.signup.Password") %></span><%= f.password_field :password, :class => "inputField" %><span class="need">*至少6个字符</span></li>
-				<li><span class="label"><%= t("form.signup.Password confirmation") %></span><%= f.password_field :password_confirmation, :class => "inputField" %><span class="need">*</span></li>				
+				<li><span class="label"><%= t("form.signup.Email") %></span><%= f.text_field :email, :class => "inputField_m" %><span class="need">*</span></li>
+				<li><span class="label"><%= t("form.signup.Password") %></span><%= f.password_field :password, :class => "inputField_m" %><span class="need">*至少6个字符</span></li>
+				<li><span class="label"><%= t("form.signup.Password confirmation") %></span><%= f.password_field :password_confirmation, :class => "inputField_m" %><span class="need">*</span></li>				
 				<li class="indent"><%= f.submit t("form.signup.Submit"), :class => "button bbutton" %></li>
 			</ul>
 		<% end %>
