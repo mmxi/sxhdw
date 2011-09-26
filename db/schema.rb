@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923122524) do
+ActiveRecord::Schema.define(:version => 20110926033645) do
+
+  create_table "act_texts", :force => true do |t|
+    t.integer "activity_id"
+    t.text    "act_description"
+  end
+
+  add_index "act_texts", ["activity_id"], :name => "act_index"
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"

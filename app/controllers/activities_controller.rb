@@ -2,8 +2,6 @@ class ActivitiesController < ApplicationController
   layout "home"
   include_kindeditor :only => [:new, :edit]
   
-  # GET /activities
-  # GET /activities.xml
   def index
     @activities = Activity.all
 
@@ -13,8 +11,6 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1
-  # GET /activities/1.xml
   def show
     @activity = Activity.find(params[:id])
 
@@ -24,10 +20,9 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/new
-  # GET /activities/new.xml
   def new
     @activity = Activity.new
+    @activity.build_act_text
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,31 +30,26 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1/edit
   def edit
     @activity = Activity.find(params[:id])
     @activity.start_time = @activity.start_time.strftime("%Y-%m-%d %H:%M")
     @activity.end_time = @activity.end_time.strftime("%Y-%m-%d %H:%M")
   end
 
-  # POST /activities
-  # POST /activities.xml
   def create
     @activity = Activity.new(params[:activity])
-
-    respond_to do |format|
+    #@act_text = ActText.new(params[:act_text])
+    
+    respond_to do |wants|
       if @activity.save
-        format.html { redirect_to(@activity, :notice => 'Activity was successfully created.') }
-        format.xml  { render :xml => @activity, :status => :created, :location => @activity }
+        wants.html { redirect_to(@activity, :notice => 'Activity was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @activity.errors, :status => :unprocessable_entity }
       end
+      
     end
   end
 
-  # PUT /activities/1
-  # PUT /activities/1.xml
   def update
     @activity = Activity.find(params[:id])
 
@@ -74,8 +64,6 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # DELETE /activities/1
-  # DELETE /activities/1.xml
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
