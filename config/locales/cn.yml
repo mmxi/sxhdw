@@ -82,3 +82,9 @@ cn:
               confirmation: "两次密码不一致"
               too_short:  "密码太短了"
               blank:  "密码不能为空"              
+        activity:
+          attributes:
+            act_subject:
+              blank:  "标题不能为空"
+            act_place:
+              blank:  "地点不能为空"

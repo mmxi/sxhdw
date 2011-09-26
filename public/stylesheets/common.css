@@ -90,7 +90,7 @@ h5{	font-size: 1em; }
 .inner_box30 { padding: 30px; }
 .inner_box40 { padding: 40px; }
 .inner_box50 { padding: 50px; }
-span em{ color: #FE0000; font-weight: bold; }
+span em{ color: #FE0000; font-weight: bold; font-style: normal; }
 
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
@@ -126,7 +126,9 @@ span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: rig
 .field_with_errors label.message{ clear:both; display: block; height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
 .form li{ height: 20px; }
 .form li{	display: block;	height: 50px; }
+.form li.content{ height: auto; margin-bottom: 10px; }
 .form li.indent{ padding-left:80px; }
+
 
 #header{
 }

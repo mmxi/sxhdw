@@ -2,7 +2,8 @@ Sxhdw::Application.routes.draw do
   
   resources :user_sessions
   resource :account, :controller => "users"
-  resource :users
+  resources :users
+  resources :activities, :path => :events
 
   match '/signup' => "users#new"
   match '/login' => "user_sessions#new",      :as => :login

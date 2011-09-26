@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923122523) do
+ActiveRecord::Schema.define(:version => 20110923122524) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "act_subject"
+    t.string   "act_type"
+    t.string   "act_place"
+    t.integer  "view_count"
+    t.integer  "comment_count"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["start_time", "end_time"], :name => "act_start_end_time"
+  add_index "activities", ["user_id", "act_subject", "act_type"], :name => "act_user_subject_type"
+  add_index "activities", ["user_id", "comment_count", "start_time"], :name => "user_comment_count_start_time"
+  add_index "activities", ["view_count"], :name => "act_view_count"
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"

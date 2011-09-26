@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<%= debug @activity.start_time.class %>
+<p><%= @activity.act_subject %></p>
+<p><%= @activity.start_time %></p>
+<p><%= @activity.end_time %></p>
+<p><%= @activity.act_place %></p>
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

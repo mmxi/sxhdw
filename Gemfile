@@ -20,6 +20,8 @@ gem 'factory_girl', '~> 2.1.0'
 gem 'factory_girl_rails', '~> 1.2.0'
 gem 'rspec-rails'
 gem 'client_side_validations'
+gem 'carrierwave'
+gem 'rails_kindeditor'
 
 
 # Use unicorn as the web server
