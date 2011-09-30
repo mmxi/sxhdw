@@ -3,7 +3,7 @@ class Admin::ActivitiesController < ApplicationController
   include_kindeditor :only => [:new, :edit]
   
   def index
-    render :text => 'events index'
+    @activities = Activity.order("updated_at desc").paginate(:page => params[:page]||1, :per_page => 10)
   end
   
   def new
@@ -28,7 +28,7 @@ class Admin::ActivitiesController < ApplicationController
     
     respond_to do |wants|
       if @activity.save
-        wants.html { redirect_to(@activity, :notice => 'Activity was successfully created.') }
+        wants.html { redirect_to(admin_activities_url, :notice => 'Activity was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -41,7 +41,7 @@ class Admin::ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
-        format.html { redirect_to(@activity, :notice => 'Activity was successfully updated.') }
+        format.html { redirect_to(admin_activities_url, :notice => 'Activity was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -55,7 +55,7 @@ class Admin::ActivitiesController < ApplicationController
     @activity.destroy
 
     respond_to do |format|
-      format.html { redirect_to(activities_url) }
+      format.html { redirect_to(admin_activities_url) }
       format.xml  { head :ok }
     end
   end

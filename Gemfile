@@ -22,6 +22,7 @@ gem 'rspec-rails'
 gem 'client_side_validations'
 gem 'carrierwave'
 gem 'rails_kindeditor'
+gem 'will_paginate'
 
 
 # Use unicorn as the web server
