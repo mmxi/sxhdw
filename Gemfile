@@ -21,7 +21,7 @@ gem 'factory_girl_rails', '~> 1.2.0'
 gem 'rspec-rails'
 gem 'client_side_validations'
 gem 'carrierwave'
-gem 'rails_kindeditor'
+gem 'rails_kindeditor', '~> 0.2.0'
 gem 'will_paginate'
 
 

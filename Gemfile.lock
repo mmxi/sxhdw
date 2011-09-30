@@ -41,7 +41,8 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (2.1.0)
+    factory_girl (2.1.2)
+      activesupport
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
@@ -125,7 +126,7 @@ GEM
       activesupport (= 3.0.10)
       bundler (~> 1.0)
       railties (= 3.0.10)
-    rails_kindeditor (0.1.0)
+    rails_kindeditor (0.2.0)
       carrierwave
     railties (3.0.10)
       actionpack (= 3.0.10)
@@ -165,8 +166,8 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.29)
-    will_paginate (3.0.pre2)
+    tzinfo (0.3.30)
+    will_paginate (3.0.2)
 
 PLATFORMS
   ruby
@@ -184,7 +185,7 @@ DEPENDENCIES
   omniauth (= 0.2.6)
   omniauth_china (= 0.1.1)
   rails (= 3.0.10)
-  rails_kindeditor
+  rails_kindeditor (~> 0.2.0)
   rspec-rails
   ruby-debug
   sqlite3
