@@ -3,17 +3,21 @@ Sxhdw::Application.routes.draw do
   resources :user_sessions
   resource :account, :controller => "users"
   resources :users
-  resources :activities, :path => :events
+  resources :activities, :path => :events, :only => [:index, :show]
 
-  match '/signup' => "users#new"
-  match '/login' => "user_sessions#new",      :as => :login
-  match '/logout' => "user_sessions#destroy", :as => :logout
+  match "/signup" => "users#new", :as => :signup
+  match "/login" => "user_sessions#new",      :as => :login
+  match "/logout" => "user_sessions#destroy", :as => :logout
   
   match "auth/:provider/callback", :to => "authorizations#create"
   match "auth/failure", :to => "authorizations#failure"
   match "user/bind", :to => "users#bind"
   match "user/login", :to => "users#login"
   
+  namespace "admin" do
+    resources :activities, :path => :events
+  end
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -63,7 +67,6 @@ Sxhdw::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

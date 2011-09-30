@@ -2,6 +2,10 @@ cn:
   navigation:
     Home: "首页"
     Forum:  "论坛"
+    Activity: "活动"
+    Group buying: "团购"
+    Movie:  "电影"
+    Group:  "小组"
     
   form:
     signup:

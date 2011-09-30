@@ -1,6 +1,6 @@
 body{ background: url(../images/body_bg.gif) repeat-x; font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif; }
 body {	font-size: 10px; }
-a{ font-size: 12px;	display: inline-block; text-decoration: none; }
+a{ font-size: 12px;	display: inline-block; text-decoration: none; color: #5F635E; }
 input{ display: inline-block; margin: 0px; padding: 0px; vertical-align: middle; }
 h1{	font-size: 1.8em; }
 h2{	font-size: 1.6em; }
@@ -120,7 +120,7 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 .inputField_b{ width: 400px; }
 .inputField_bb{ width: 500px; }
 span.label{ float: left; display: block; width: 80px; text-align: right; height: 22px; line-height: 22px; font-size:12px; color: #5F635E; }
-span.need{ float: left; display:block; height:22px; line-height:22px; color:#FF0000; padding-left:10px;}
+span.need{ float: left; display:block; height:22px; line-height:22px; color:#FF0000; padding-left:10px; font-size: 12px;}
 span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: right; height: 22px; line-height: 22px; font-size:12px; color: #5F635E; }
 .field_with_errors{ float: left; display:block; height: 50px; }
 .field_with_errors label.message{ clear:both; display: block; height: 22px; line-height: 22px; text-align: left; color: #FF0000;}
@@ -130,135 +130,38 @@ span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: rig
 .form li.indent{ padding-left:80px; }
 
 
-#header{
-}
-#header_top{
-	height: 57px;
-}
-#logo{
-	float: left;
-	width: 220px;
-	height: 57px;
-}
-#main_nav{
-	height: 32px;
-}
-#hot_tags{
-	float: left;
-	width: 300px;
-	height: 57px;
-}
-#hot_tags a{
-	color: #5F635E;
-}
+#header{}
+#header_top{ height: 57px; }
+#logo{ float: left; width: 220px; height: 57px; }
+#main_nav{ height: 32px; }
+#hot_tags{ float: left; width: 300px; height: 57px; }
+#hot_tags a{ color: #5F635E; }
 /*
 #hot_tags a:hover{
 	border-bottom: 2px solid #5F635E;
 }
 */
-#hot_tags li{
-	float: left;
-	padding: 32px 5px 0px 5px;
-}
-#hot_tags li.hot{
-	position: relative;
-}
-#hot_tags li.hot span{
-	position: absolute;
-	left: -5px;
-	top: 20px;
-}
-#slogin_form{
-	float: right;
-	margin-right: 24px;
-	width: 280px;
-	border-left: 1px solid #CCCCCC;
-	border-right: 1px solid #CCCCCC;
-	border-bottom: 1px solid #CCCCCC;
-	padding-bottom: 4px;
-}
-#slogin_form_top{
-	height: 27px;
-	line-height: 27px;
-	margin-bottom: 2px;
-	padding-left: 10px;
-}
-#slogin_form_top li{
-	float: left;
-	margin-right: 10px;
-}
-#slogin_form_top a, label{
-	font-size:12px;
-	color: #5F635E;
-}
+#hot_tags li{ float: left; padding: 32px 5px 0px 5px; }
+#hot_tags li.hot{ position: relative; }
+#hot_tags li.hot span{ position: absolute; left: -5px; top: 20px; }
+#slogin_form{ float: right; margin-right: 24px; width: 280px; padding-top: 15px; }
+#slogin_form li{ float: left; margin-right: 10px; font-size: 12px; color: #AF939E; }
+#slogin_form li.register a{ color: #5A0; font-weight: bold; }
 
-#slogin_form_top a.btn_5{
-	color: #FFFFFF;
-}
-.log_box{
-	padding-left:4px;
-}
-.log_box .id_input, .pw_input, .none{
-	width: 88px;
-	margin-right: 2px;
-	color: #3A3C3A;
-	font-weight: bold;
-	border: 1px solid #D5DAD1;
-	background: #F1F3EF;
-	padding: 0px 4px;
-	font-size: 11px;
-	height: 18px;
-	line-height: 18px;
-	vertical-align: bottom;
-	background-repeat: no-repeat;
-}
-.log_box input.id_input{
-	background-image: url(../images/idpw.gif);
-}
-.log_box input.pw_input{
-	background-image: url(../images/idpw.gif);
-	background-position: 0px -18px;
-}
-.log_box input.none{
-	background: #C2CBBC;
-}
 
 /* navigation */
-#main_nav{
-}
-#sub_nav{
-	float: right;
-	width: 327Px;
-	height: 32px;
-	background: url(../images/subnav_bg.gif) no-repeat;
-}
-#main_nav a{
-	display: inline-block;
-	color: #FFFFFF;
-	font-weight: bold;
-	font-size: 14px;
-}
-#main_nav a:hover{
-	border-bottom: 4px solid #FFFFFF;
-}
-#main_nav li{
-	float: left;
-	padding: 9px 10px 0px 10px;
-}
+#main_nav{}
+#sub_nav{ float: right; width: 327px; height: 32px; background: url(../images/subnav_bg.gif) no-repeat; }
+#main_nav a{ display: inline-block; color: #FFFFFF; font-weight: bold; font-size: 14px; }
+#main_nav a:hover{ border-bottom: 4px solid #FFFFFF; }
+#main_nav li{ float: left; padding: 9px 10px 0px 10px; }
 
 /* search */
-#search{
-	height: 51px;
-}
+#search{ height: 51px; }
 
 /* content */
-#content{
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-#content h2{
-	margin-bottom:10px;
-}
+#content{ margin-top: 10px; margin-bottom: 10px; }
+#content h2{ margin-bottom:10px; }
 
 /* login */
 .cbox{ border: 7px solid #e0e0e0; border-radius: 5px; }
@@ -266,54 +169,19 @@ span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: rig
 .login_box{ width: 400px; padding-top: 30px; }
 
 
-.other_login{
-	float: left;
-	width: 325px;
-	padding: 20px 0px 0px 40px;
-}
-.other_login h4{
-	margin-bottom: 10px;
-}
-.other_login li{
-	width: 150px;
-	height: 24px;
-	margin-right: 10px;
-	margin-bottom: 20px;
-	float: left;
-}
-.other_login li a{
-	width: 124px;
-	height: 24px;
-	display:block;
-	text-indent: 300px;
-}
-.other_login li.sina{
-	background: url(../images/sina_login.png) no-repeat;
-}
-.other_login li.qq{
-	background: url(../images/qq_login.gif) no-repeat;
-}
-.other_login li.renren{
-	background: url(../images/renren_login.png) no-repeat;
-}
-.other_login li.qzone{
-	background: url(../images/qzone_login.png) no-repeat;
-}
-.other_login li.google{
-	background: url(../images/google_login.png) no-repeat;
-}
-.other_login li.douban{
-	background: url(../images/douban_login.png) no-repeat;
-}
-.other_login h3{
-	color: #111111;
-	font-size: 1.5em;
-	margin-bottom: 10px;
-}
-.other_login h3 a{
-	color: #4F790B;
-	font-size: 1em;
-}
+/* oauth login */
+.other_login{ float: left; width: 325px; padding: 20px 0px 0px 40px; }
+.other_login h4{ margin-bottom: 10px; }
+.other_login li{ float: left; width: 150px; height: 24px; margin-right: 10px; margin-bottom: 20px;  }
+.other_login li a{ display: block; width: 124px; height: 24px;  text-indent: 300px; }
+.other_login li.sina{ background: url(../images/sina_login.png) no-repeat; }
+.other_login li.qq{ background: url(../images/qq_login.gif) no-repeat; }
+.other_login li.renren{ background: url(../images/renren_login.png) no-repeat;}
+.other_login li.qzone{ background: url(../images/qzone_login.png) no-repeat; }
+.other_login li.google{ background: url(../images/google_login.png) no-repeat; }
+.other_login li.douban{	background: url(../images/douban_login.png) no-repeat; }
+.other_login h3{ color: #111111; font-size: 1.5em; margin-bottom: 10px; }
+.other_login h3 a{ color: #4F790B; font-size: 1em; }
 
 /* user bind */
 #userbind_top{ height: 48px; line-height: 48px; padding-left: 200px; }
@@ -322,31 +190,26 @@ span.sep{ float: left; display: block; padding: 0px 5px 0px 5px; text-align: rig
 #userbind_content{ padding-left: 290px; }
 
 /* footer */
-#footer_wrap{
-}
-#footer_top{
-	height: 30px;
-	border-top: 1px solid #e0e0e0;
-	border-bottom: 1px solid #e0e0e0;
-}
+#footer_wrap{}
+#footer_top{ height: 30px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
 
-#sider{
-	float: left;
-	width: 150px;
-	border: 1px solid #333333;
-}
-#main{
-	float: left;
-	width: 790px;
-	margin-left: 10px;
-	border: 1px solid #F2F2F2;
-	background: #ECEDEF;
-}
-.main_top{
-	margin-top: 20px;
-	margin-left: 20px;
-}
+/* lsider */
+#lsider{ float: left; width: 150px; background: #CCE0EF; padding-top: 10px; }
+
+/* main */
+#main{ float: left; width: 790px; margin-left: 10px; border: 1px solid #F2F2F2; background: #ECEDEF; }
+.main_top{ margin-top: 20px; margin-left: 20px; }
 .main_content{ margin-top: 20px; }
 .main_top span{ line-height: 1.6em; }
 .main_top span.desc{ color: #999999; }
 #main h2{ color: #2A2A2A; }
+
+/* app_list */
+#app_list li{ width: 140px; height: 24px; line-height: 24px; font-size: 12px; margin-bottom: 5px; }
+#app_list li a{ margin-left: 30px; height: 22px; line-height: 22px; font-size: 12px; color: #5F635E; }
+#app_list li.add{ background: url(../images/iconset/add.png) 10px 4px no-repeat;}
+#app_list li.film{ background: url(../images/iconset/film.png) 10px 4px no-repeat;}
+#app_list li.group{ background: url(../images/iconset/group.png) 10px 4px no-repeat;}
+#app_list li.email{ background: url(../images/iconset/email.png) 10px 4px no-repeat;}
+#app_list li.database{ background: url(../images/iconset/database.png) 10px 4px no-repeat;}
+#app_list li.comment{ background: url(../images/iconset/comment.png) 10px 4px no-repeat;}
