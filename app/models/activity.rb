@@ -4,4 +4,5 @@ class Activity < ActiveRecord::Base
   
   has_one :act_text
   accepts_nested_attributes_for :act_text
+  belongs_to :user
 end

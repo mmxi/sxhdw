@@ -1,9 +1,10 @@
 class Admin::ActivitiesController < ApplicationController
+  before_filter :require_user
   layout "admin"
   include_kindeditor :only => [:new, :edit]
   
   def index
-    @activities = Activity.order("updated_at desc").paginate(:page => params[:page]||1, :per_page => 10)
+    @activities = current_user.activities.paginate(:page => params[:page]||1, :per_page => 10)
   end
   
   def new
@@ -24,7 +25,7 @@ class Admin::ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(params[:activity])
-    #@act_text = ActText.new(params[:act_text])
+    @activity.user_id = current_user.id
     
     respond_to do |wants|
       if @activity.save

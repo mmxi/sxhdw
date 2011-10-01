@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   
   
   has_many :authorizations, :dependent => :destroy
+  has_many :activities, :order => "updated_at desc"
+  
+  def name
+    self.nickname||self.email
+  end
   
   acts_as_authentic do |c|
     c.login_field = :email
