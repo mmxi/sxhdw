@@ -4,7 +4,7 @@
 	<% elsif @user_action_type == "register" %>
 		<h3>已经拥有活动网帐号，<%= link_to "从这里登录", "/login" %></h3>
 	<% end %>
-	<h4>你也可以通过站外账号进行登录！</h4>
+	<p>你也可以通过站外账号进行登录！</p>
 	<ul>
 		<li class="sina"><%= link_to "", "/auth/tsina", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
 		<li class="qq"><%= link_to "", "/auth/tqq", :class => "popup", :"data-width" => 800, :"data-height" => 600 %></li>

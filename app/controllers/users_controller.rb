@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :bind, :login]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:show, :edit, :update, :change_password]
   layout "home"
 
   def new
@@ -9,30 +9,32 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = t("message.Account registered!")
-      redirect_to root_url
+    if @user.save_without_session_maintenance
+      @user.deliver_activation_instructions! # send activation email
+      flash[:notice] = "确认信已经发到你的邮箱 #{@user.email} ，你需要点击邮件中的确认链接来完成注册。"
+      redirect_to signup_path
     else
+      flash[:error] = "注册失败，请检查您的输入是否正确"
       render :action => :new
     end
   end
 
   def show
-    @user = @current_user
+    @user = User.find(params[:id].to_i)
   end
 
   def edit
-    @user = @current_user
+    @user = current_user
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
-      redirect_to account_url
+      flash[:success] = "设置更新成功"
     else
-      render :action => :edit
+      flash[:error] = "设置更新失败"
     end
+    redirect_to edit_user_path(@user)
   end
   
   def auth_callback
@@ -40,65 +42,97 @@ class UsersController < ApplicationController
     redirect_to root_path if auth.blank?
     @auth = auth
   end
-  
-  #bind account if user has a account
+
   def bind
-    #no login with oauth redirect to root_url
     if session[:omniauth].blank?
-      redirect_to root_url
-      return
-    end
-    @user = User.new(:nickname => session[:omniauth]["user_info"]["name"])
-    @user_session = UserSession.new()
-    if request.post?
-      @user_session = UserSession.new(params[:user_session])
-      if @user_session.save
-        #login success
-        @user = (UserSession.find).user
-        @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
-        if @new_auth
-          flash[:success] = t("message.Successfully binded")
-          redirect_to root_url
+      redirect_to root_path
+    else
+      @user = User.new(:nickname => session[:omniauth]["user_info"]["name"],
+                       :face_url => get_oauth_user_image(session[:omniauth])
+      )
+      @user_session = UserSession.new()
+      if request.post?
+        @user_session = UserSession.new(params[:user_session])
+        if @user_session.save
+          @user = UserSession.find.user
+          @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
+          flash[:success] = "欢迎#{t('oauth.' + session[:omniauth]['provider'])}用户，你的帐号绑定成功"
+          session[:omniauth] = nil
+          redirect_to user_path(@user)
         else
-          flash[:success] = t("message.Bind failed")
-          redirect_to "/user/bind"
+          flash[:error] = "绑定失败，请检查用户名和密码"
+          redirect_to user_bind_path
         end
-      else
-        flash[:error] = t("message.Login failed")
-        redirect_to "/user/bind"
       end
     end
+    #@user = User.new(:nickname => session[:omniauth]["user_info"]["name"])
+    #@user_session = UserSession.new()
+    #if request.post?
+    #  @user_session = UserSession.new(params[:user_session])
+    #  if @user_session.save
+    #    #login success
+    #    @user = (UserSession.find).user
+    #    @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
+    #    if @new_auth
+    #      flash[:success] = "用户绑定成功"
+    #      redirect_to root_path
+    #    else
+    #      flash[:success] = "用户绑定失败"
+    #      redirect_to user_bind_path
+    #    end
+    #  else
+    #    flash[:error] = "用户登录失败"
+    #    redirect_to user_bind_path
+    #  end
+    #end
   end
   
-  #bind account if user has no account
   def login
     if session[:omniauth].blank?
-      redirect_to root_url
-      return
-    end
-    @user = User.new(:nickname => session[:omniauth]["user_info"]["name"])
-    @rpassword = newpass(6)
-    if request.post?
-      @user = User.new(params[:user])
-      random_password = newpass(6)
-      @user.password = random_password
-      @user.password_confirmation = random_password
-      if @user.save
-        @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
-        #Log the authorizing user in.
-        flash[:notice] = "Welcome #{@new_auth['provider']} user. Your account has been created."
-        UserSession.create(@new_auth.user, true)
-        redirect_to root_url
-      else
-        redirect_to "/user/login"
+      redirect_to root_path
+    else
+      @user = User.new(:nickname => session[:omniauth]['user_info']['name'],
+                       :face_url => get_oauth_user_image(session[:omniauth])
+      )
+      if request.post?
+        @rpassword = newpass(6)
+        @user = User.new(params[:user])
+        @user.password, @user.password_confirmation = @rpassword, @rpassword
+        @user.face_url = get_oauth_user_image(session[:omniauth])
+        @user.activate!
+        if @user.save
+          @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
+          UserSession.create(@new_auth.user, true)
+          flash[:notice] = "欢迎#{t('oauth.' + session[:omniauth]['provider'])}用户，你的帐号创建成功"
+          session[:omniauth] = nil
+          redirect_to user_path(@user)
+        else
+          flash[:error] = "请检查你的输入是否正确，可能该帐号已经存在"
+          redirect_to user_login_path
+        end
       end
     end
   end
   
   def newpass( len )
-      chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-      newpass = ""
-      1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
-      return newpass
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    ret = ""
+    1.upto(len) { |i| ret << chars[rand(chars.size-1)] }
+    ret
+  end
+  
+  def change_password
+    @user = current_user
+    if request.put?
+      @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
+      if (@user.password and @user.password_confirmation) && (@user.password == @user.password_confirmation)
+        @user.update_attributes(params[:user])
+        flash[:success] = "修改密码成功"
+      else
+        flash[:error] = "请检查密码，重新输入"
+      end
+      redirect_to change_password_user_path(@user)
+    end
   end
 end

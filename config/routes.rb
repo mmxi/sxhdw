@@ -1,9 +1,21 @@
 Sxhdw::Application.routes.draw do
   
+  get "activations/create"
+
   resources :user_sessions
-  resource :account, :controller => "users"
-  resources :users
-  resources :activities, :path => :events, :only => [:index, :show]
+  resources :users do
+    member do
+      get :change_password
+      put :change_password
+    end
+  end
+  
+  resources :activities, :path => :events, :only => [:index, :show, :join] do
+    member do
+      get :join
+      get :interest
+    end
+  end
 
   match "/signup" => "users#new", :as => :signup
   match "/login" => "user_sessions#new",      :as => :login
@@ -11,8 +23,9 @@ Sxhdw::Application.routes.draw do
   
   match "auth/:provider/callback", :to => "authorizations#create"
   match "auth/failure", :to => "authorizations#failure"
-  match "user/bind", :to => "users#bind"
-  match "user/login", :to => "users#login"
+  match "user/bind", :to => "users#bind", :as => :user_bind
+  match "user/login", :to => "users#login", :as => :user_login
+  match "/activate/:activation_code", :to => "activations#create", :as => :activate
   
   namespace "admin" do
     resources :activities, :path => :events

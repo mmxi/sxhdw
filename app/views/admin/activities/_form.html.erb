@@ -7,6 +7,9 @@
 	<li class="content"><span class="label"><em>*</em>活动描述：</span><%= act_text.text_area :act_description, :id => "kindeditor_id" %></li>
 	<% end %>
 	<li><span class="label">标签：</span><%= f.text_field :tag_list, :class => "inputField_b"%><span class="need">标签之间用逗号隔开</span></li>
+	<li><span class="label">活动封面或海报：</span>
+		<%= link_to "选择文件", "javascript:void(0);", :id => "upload_button" %>
+	</li>
 	<li class="indent"><%= f.submit "提交", :class => "button bbutton" %></li>
 </ul>
 <% end %>

@@ -12,13 +12,37 @@ function popupCenter(url, width, height, name) {
 	window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
 }
 
+// popup menu
+function popup_menu(){
+	$("li.menu").click(function() {
+		$("ul.submenu").toggle();
+	});
+	
+	$("ul.submenu").mouseup(function() {
+		return false
+	});
+	$(document).mouseup(function(e) {
+		if($(e.target).parent("li.menu").length==0) {
+			$("ul.submenu").hide();
+		}
+	});
+}
+
 jQuery(document).ready(function(){
+    //jQuery("div#flash_message").fadeOut(5000);
 	jQuery(".popup").click(function(){
 		popupCenter(jQuery(this).attr("href"), jQuery(this).attr("data-width"), jQuery(this).attr("data-height"));
 		return false;
 	});
+	popup_menu(); // init popup menu
 	jQuery("#activity_start_time").datetimepicker();
 	jQuery("#activity_end_time").datetimepicker();
+	
+	jQuery(".tinyman").mouseover(function(){
+		$(this).css("background", "#ddd");
+	}).mouseout(function(){
+		$(this).css("background", "#fff");
+	});
 });
 
 

@@ -1,17 +1,25 @@
 # Read about factories at http://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :zhangsan do
+  factory :zhangsan, :class => User do
     login "zhangsan"
     nickname  "张三"
-    email "cjdx4311@gmail.com"
+    email "zhangsan@gmail.com"
     password  "123456"
     password_confirmation "123456"
   end
-  factory :lisi do
+
+  factory :lisi, :class => User do
     login "lisi"
     nickname  "李四"
-    email "wangliang4311@gmail.com"
+    email "lisi@gmail.com"
+    password  "123456"
+    password_confirmation "123456"
+  end
+
+  factory :wangwu, :class => User do
+    login "wangwu"
+    email "wangwu@gmail.com"
     password  "123456"
     password_confirmation "123456"
   end

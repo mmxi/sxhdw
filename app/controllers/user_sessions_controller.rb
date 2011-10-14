@@ -9,29 +9,17 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    @login_success = false
     if @user_session.save
-      flash[:success] = t("message.Login successful")
-      respond_to do |wants|
-        wants.js {
-          @login_success = true
-          @user = (UserSession.find).user
-        }
-        wants.html { redirect_to "/" }
-      end
+      flash[:success] = "登录成功"
+      redirect_to user_path(UserSession.find.user)
     else
-      flash[:error] = t("message.Login failed")
-      #redirect_back_or_default("/login")
-      respond_to do |wants|
-        wants.js {  }
-        wants.html { redirect_to "/login" }
-      end
+      flash[:error] = "登录失败"
+      redirect_to login_path
     end
   end
 
   def destroy
     current_user_session.destroy
-    #flash[:notice] = "Logout successful!"
-    redirect_to "/login"
+    redirect_to login_path
   end
 end

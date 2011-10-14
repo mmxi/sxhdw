@@ -1,25 +1,23 @@
-<h2><%= t("form.userlogin.User bind", :provider => t("oauth.#{session[:omniauth]['provider']}"))%></h2>
-<div class="cbox p40">
-	<div class="userbind_inner">
-		<div id="userbind_top">
-			<div class="img">
-				<%= image_tag get_oauth_user_image(session[:omniauth]), :class => "fl", :width => 48, :height => 48 %>
-			</div>
-			<h3><%= @user.nickname %>，只差一步，就可以完成登录！</h3>
-		</div>
-		<div class="desc"><h4>绑定活动网帐号，即可同时使用您的第三方网站账号登录本网站，^_^</h4></div>
-		<div id="userbind_content">
-			<div class="form signup_box">
-				<%= form_for UserSession.new, :url => "/user/bind" do |f| %>
-					<ul>
-						<li><span class="label"><%= t("form.userlogin.Email") %></span><%= f.text_field :email, :class => "inputField_m" %></li>
-						<li><span class="label"><%= t("form.userlogin.Password") %></span><%= f.password_field :password, :class => "inputField_m" %></li>
-						<li class="indent"><%= f.submit t("form.userlogin.Bind immediately"), :class => "button bbutton" %></li>
-						<li class="indent">或者，<%= link_to t("message.Bind new account"), "/user/login", :class => "color6B8E00" %></li>
-					</ul>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	<div class="clear"></div>
+<h2>您正在通过<%= t('oauth.' + session[:omniauth]['provider']) %>账号登陆绍兴活动网</h2>
+<div class="clearfix"></div>
+<div class="grid_16">
+  <h2><%= image_tag @user.face_url, :width => 48, :height => 48 %><%= @user.nickname %>，只差一步，就可以完成登录！</h2>
+  <p>填写下面资料，即可同时使用您的第三方网站账号登录本网站，^_^</p>
+  <%= form_for @user_session, :url => user_bind_path, :html => {:class => "form"} do |f| %>
+    <%= render "widget/flashmessage" %>
+    <div class="clearfix">
+      <%= f.label :login, "用户名 / 邮箱：" %>
+      <div class="input"><%= f.text_field :login, :class => "input_m" %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :password, "密码：" %>
+      <div class="input"><%= f.password_field :password, :class => "input_m" %></div>
+    </div>
+    <div class="clearfix">
+      <div class="indent"><%= f.submit "立即绑定", :class => "button bbutton" %></div>
+    </div>
+    <div class="clearfix">
+      <div class="indent"><%= link_to "绑定创建新帐号", user_login_path %></div>
+    </div>
+	<% end %>
 </div>

@@ -6,7 +6,7 @@ cn:
     Group buying: "团购"
     Movie:  "电影"
     Group:  "小组"
-    
+
   form:
     signup:
       Email:  "邮箱："
@@ -21,16 +21,8 @@ cn:
       Forgot password:  "忘记密码"
       Remember me: "记住我"
       Submit: "登录"
-    userlogin:
-      Nickname: "昵称："
-      Email:  "邮箱："
-      Password: "密码："
-      Bind immediately: "立即绑定"
-      User bind:  "您正在通过%{provider}账号登陆绍兴活动网"
       
   message:
-    Bind new account: "绑定创建新帐号"
-    I have already account, bind account: "我已经有活动网帐号，绑定帐号"
     Account registered!:  "恭喜！注册成功"
     You must be logged out to access this page: "您必须退出才可以访问这个页面"
     You must be logged in to access this page:  "请先登录"
@@ -59,6 +51,7 @@ cn:
         email:  "邮箱地址："
         password: "密码："
         password_confirmation:  "确认密码："
+        photo: "头像："
         
   oauth:
     tsina:  "新浪微博"
@@ -67,28 +60,3 @@ cn:
     qzone:  "QQ"
     douban: "豆瓣网"
     google: "Google"
-    
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank:  "邮箱不能为空"
-              too_short:  "好像不对吧, ^_^"
-              taken:  "该邮箱已经被注册了"
-              email_format: "Email格式不正确"
-            password:
-              blank:  "密码不能为空"
-              too_short:  "密码太短了"
-              confirmation: "两次密码不一致"
-            password_confirmation:
-              confirmation: "两次密码不一致"
-              too_short:  "密码太短了"
-              blank:  "密码不能为空"              
-        activity:
-          attributes:
-            act_subject:
-              blank:  "标题不能为空"
-            act_place:
-              blank:  "地点不能为空"

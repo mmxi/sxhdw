@@ -23,6 +23,8 @@ gem 'client_side_validations'
 gem 'carrierwave'
 gem 'rails_kindeditor', '~> 0.2.0'
 gem 'will_paginate'
+gem 'paperclip'
+gem 'spork', '~> 0.9.0.rc'
 
 
 # Use unicorn as the web server

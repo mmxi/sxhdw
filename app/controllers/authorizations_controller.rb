@@ -3,19 +3,21 @@ class AuthorizationsController < ApplicationController
   
 
   def create
-    omniauth = request.env['omniauth.auth'] #this is where you get all the data from your provider through omniauth
+    omniauth = request.env['omniauth.auth']
     @auth = Authorization.find_from_hash(omniauth)
     @redirect_to = root_url
-    if current_user
-      flash[:notice] = "Successfully added #{omniauth['provider']} authentication"
-      current_user.authorizations.create(:provider => omniauth['provider'], :uid => omniauth['uid']) #Add an auth to existing user
+    @user = current_user
+    if @user
+      flash[:notice] = "#{@user.display_name}，你的帐号已经成功绑定到#{t('oauth.' + omniauth['provider'])}"
+      @user.authorizations.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
+      @redirect_to = user_path(@user)
     elsif @auth
-      logger.debug "=========Authorizations create elsif ===================="
-      flash[:notice] = "Welcome back #{omniauth['provider']} user"
-      UserSession.create(@auth.user, true) #User is present. Login the user with his social account
+      flash[:notice] = "欢迎回来，你正在使用#{t('oauth.' + omniauth['provider'])}登录绍兴活动网"
+      UserSession.create(@auth.user, true)
+      @redirect_to = user_path(@auth.user)
     else
       session[:omniauth] = omniauth
-      @redirect_to = "/user/login"
+      @redirect_to = user_login_path
     end
   end
   
@@ -25,7 +27,7 @@ class AuthorizationsController < ApplicationController
   end
   
   def blank
-    render :text => "Not Found", :status => 404
+    render :text => "此页面不存在", :status => 404
   end
 
   def destroy

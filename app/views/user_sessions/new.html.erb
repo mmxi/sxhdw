@@ -1,16 +1,21 @@
-<h2><%= t("form.login.User login")%></h2>
-<div class="cbox p40">
-	<div class="form login_box fl">
-		<% @user_action_type = "login" %>
-		<%= form_for(@user_session) do |f| %>
-			<ul>
-				<li><span class="label"><%= t("form.login.Email") %></span><%= f.text_field :email, :class => "inputField" %></li>
-				<li><span class="label"><%= t("form.login.Password") %></span><%= f.password_field :password, :class => "inputField" %></li>
-				<li class="indent"><%= f.check_box :remember_me %><%= f.label :remember_me, :class => "remember_me" %></li>
-				<li class="indent"><%= f.submit t("form.login.Submit"), :class => "button bbutton" %></li>
-			</ul>
+<div class="grid_11">
+  <h2>用户登录</h2>
+		<%= form_for @user_session, :html => {:class => "form"} do |f| %>
+    <div class="clearfix">
+      <%= render "widget/flashmessage" %>
+      <%= f.label :login, "用户名 / 邮箱：" %>
+      <div class="input"><%= f.text_field :login, :class => "input_m" %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :password, "密码：" %>
+      <div class="input"><%= f.password_field :password, :class => "input_m" %></div>
+    </div>
+    <div class="clearfix">
+      <div class="indent"><%= f.submit "登录", :class => "button bbutton" %></div>
+    </div>
 		<% end %>
-	</div>
-	<%= render :partial => "widget/oauth" %>
-	<div class="clear"></div>
+</div>
+
+<div class="grid_5">
+  <%= render "widget/oauth" %>
 </div>

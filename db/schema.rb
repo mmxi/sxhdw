@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926114403) do
+ActiveRecord::Schema.define(:version => 20111007023309) do
 
   create_table "act_texts", :force => true do |t|
     t.integer "activity_id"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20110926114403) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "sessions", :force => true do |t|
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(:version => 20110926114403) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "sns_activity_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.boolean  "attendee"
+    t.boolean  "interest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sns_activity_users", ["activity_id"], :name => "index_sns_activity_users_on_activity_id"
+  add_index "sns_activity_users", ["user_id", "activity_id", "attendee"], :name => "index_sns_activity_users_on_user_id_and_activity_id_and_attendee"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -73,23 +85,33 @@ ActiveRecord::Schema.define(:version => 20110926114403) do
   add_index "tags", ["name"], :name => "index_tags_on_name"
 
   create_table "users", :force => true do |t|
+    t.string   "login",                                 :null => false
     t.string   "nickname"
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
+    t.string   "email",                                 :null => false
+    t.string   "crypted_password",                      :null => false
+    t.string   "password_salt",                         :null => false
+    t.string   "persistence_token",                     :null => false
+    t.string   "perishable_token",                      :null => false
     t.integer  "login_count",        :default => 0
     t.integer  "failed_login_count", :default => 0
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.string   "info"
+    t.boolean  "active",             :default => false, :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
-    t.string   "current_login_ip"
-    t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "face_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token", :unique => true
 
 end
