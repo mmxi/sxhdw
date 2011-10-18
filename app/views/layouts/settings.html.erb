@@ -14,10 +14,9 @@
 </head>
 <body>
 <%= render "widget/top_nav" %>
-<%= render "widget/admin_topmain" %>
+<%= render "widget/setting_topmain" %>
 	<div id="main" class="container_16">
-    <div id="mainbar" class="grid_10"><%= yield %></div>
-		<div id="sidebar" class="grid_6"><%= yield :side %></div>
+		<%= yield %>
 	</div>
 <%= render :partial => "widget/footer" %>
 </body>

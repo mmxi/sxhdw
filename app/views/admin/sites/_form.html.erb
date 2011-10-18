@@ -1,0 +1,18 @@
+<%= form_for [:admin, @site], :html => {:class => "form" }, :validate => true do |f| %>
+  <%= render :partial => "widget/flashmessage" %>
+  <div class="clearfix">
+    <%= f.label :name, "站点名称：" %>
+    <div class="input"><%= f.text_field :name, :class => "input_m" %></div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :host, "站点网址：" %>
+    <div class="input"><%= f.text_field :host, :class => "input_m" %></div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :description, "站点描述：" %>
+    <div class="input"><%= f.text_area :description, :class => "text_m" %></div>
+  </div>
+  <div class="clearfix">
+    <div class="indent"><%= f.submit submit_txt, :class => "button bbutton" %></div>
+  </div>
+<% end %>

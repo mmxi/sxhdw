@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007023309) do
+ActiveRecord::Schema.define(:version => 20111016102107) do
 
   create_table "act_texts", :force => true do |t|
     t.integer "activity_id"
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(:version => 20111007023309) do
     t.datetime "updated_at"
   end
 
+  create_table "forums", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "topics_count",     :default => 0
+    t.integer  "posts_count",      :default => 0
+    t.integer  "position",         :default => 0
+    t.string   "state",            :default => "public"
+    t.text     "description_html"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forums", ["position", "site_id"], :name => "index_forums_on_position_and_site_id"
+  add_index "forums", ["site_id", "permalink"], :name => "index_forums_on_site_id_and_permalink"
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -55,6 +72,28 @@ ActiveRecord::Schema.define(:version => 20111007023309) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "settings", :force => true do |t|
+    t.string   "var",                       :null => false
+    t.text     "value"
+    t.integer  "target_id"
+    t.string   "target_type", :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["target_type", "target_id", "var"], :name => "index_settings_on_target_type_and_target_id_and_var", :unique => true
+
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.string   "host"
+    t.integer  "topics_count", :default => 0
+    t.integer  "posts_count",  :default => 0
+    t.integer  "users_count",  :default => 0
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sns_activity_users", :force => true do |t|
     t.integer  "user_id"
@@ -108,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20111007023309) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "face_url"
+    t.integer  "site_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

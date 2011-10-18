@@ -1,0 +1,14 @@
+<%= render :partial => "widget/flashmessage" %>
+<ul class="table">
+  <% @forums.each do |forum| %>
+    <li class="<%= cycle("odd", "even") %>"><%= link_to forum.name, [:admin, forum] %>
+      <span class="operate">
+        <%= link_to "编辑", edit_admin_forum_path(forum) %> | <%= link_to "删除", [:admin, forum], :confirm => "确定删除", :method => :delete %>
+      </span>
+    </li>
+  <% end %>
+</ul>
+
+<% content_for :side do %>
+	<%= link_to "创建新版块", new_admin_forum_path, :class => "green" %>
+<% end %>

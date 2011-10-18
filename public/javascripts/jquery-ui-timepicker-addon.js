@@ -24,11 +24,11 @@ $.extend($.ui, { timepicker: { version: "0.9.6" } });
 /* Time picker manager.
    Use the singleton instance of this class, $.timepicker, to interact with the time picker.
    Settings for (groups of) time pickers are maintained in an instance object,
-   allowing multiple different settings on the same page. */
+   allowing multiple different setting on the same page. */
 
 function Timepicker() {
-	this.regional = []; // Available regional settings, indexed by language code
-	this.regional[''] = { // Default regional settings
+	this.regional = []; // Available regional setting, indexed by language code
+	this.regional[''] = { // Default regional setting
 		currentText: '现在',
 		closeText: '完成',
 		ampm: false,
@@ -107,8 +107,8 @@ $.extend(Timepicker.prototype, {
 			"+0100", "+0200", "+0300", "+0400", "+0500", "+0600",
 			"+0700", "+0800", "+0900", "+1000", "+1100", "+1200"],
 
-	/* Override the default settings for all instances of the time picker.
-	   @param  settings  object - the new settings to use as defaults (anonymous object)
+	/* Override the default setting for all instances of the time picker.
+	   @param  setting  object - the new setting to use as defaults (anonymous object)
 	   @return the manager object */
 	setDefaults: function(settings) {
 		extendRemove(this._defaults, settings || {});

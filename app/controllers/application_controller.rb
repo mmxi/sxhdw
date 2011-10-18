@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :current_site
 
   private
     def current_user_session
@@ -36,5 +36,26 @@ class ApplicationController < ActionController::Base
     def redirect_back_or_default(default)
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
+    end
+  
+    def find_current_site
+      @current_site ||= Site.find_by_host(Settings.current_site)
+    end
+
+    def current_site
+      find_current_site || Site.new
+    end
+
+    def get_oauth_user_image(oauth)
+      provider = oauth["provider"]
+      user_image = ""
+      if provider == "qzone"
+        user_image = oauth["user_info"]["urls"]["figureurl_1"]
+      elsif provider == "tqq"
+        user_image = oauth["user_info"]["image"] + "/50"
+      else
+        user_image = oauth["user_info"]["image"]
+      end
+      user_image
     end
 end

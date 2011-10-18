@@ -1,0 +1,11 @@
+<div id="setting_topmain">
+  <div id="setting_topmain_inner" class="container_16">
+    <h2><%= current_site.name %>后台管理</h2>
+    <ul class="tabnav">
+      <li>
+        <%= link_to "站点设置", admin_sites_path, :class => ("active" if controller.class == Admin::SitesController) %>
+      </li>
+      <li><%= link_to "论坛设置", admin_forums_path, :class => ("active" if controller.class == Admin::ForumsController) %></li>
+    </ul>
+  </div>
+</div>

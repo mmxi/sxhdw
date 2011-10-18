@@ -1,0 +1,18 @@
+<%= form_for [:admin, @forum], :html => {:class => "form"}, :validate => true do |f| %>
+  <%= render "widget/flashmessage" %>
+  <div class="clearfix">
+    <%= f.label :name, "版块名称：" %>
+    <div class="input"><%= f.text_field :name, :class => "input_m" %></div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :name, "版块位置：" %>
+    <div class="input"><%= f.text_field :position, :class => "input_ss" %></div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :description, "版块描述：" %>
+    <div class="input"><%= f.text_area :description, :class => "text_s" %></div>
+  </div>
+  <div class="clearfix">
+    <div class="indent"><%= f.submit submit_txt, :class => "button bbutton" %></div>
+  </div>
+<% end %>

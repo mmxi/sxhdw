@@ -1,6 +1,5 @@
 class AuthorizationsController < ApplicationController
   before_filter :require_user, :only => [:destroy]
-  
 
   def create
     omniauth = request.env['omniauth.auth']
@@ -19,6 +18,7 @@ class AuthorizationsController < ApplicationController
       session[:omniauth] = omniauth
       @redirect_to = user_login_path
     end
+    render :layout => false
   end
   
   def failure

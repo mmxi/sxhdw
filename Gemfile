@@ -25,7 +25,8 @@ gem 'rails_kindeditor', '~> 0.2.0'
 gem 'will_paginate'
 gem 'paperclip'
 gem 'spork', '~> 0.9.0.rc'
-
+gem 'rails3-settings', '~> 1.0.0', :require => 'settings'
+gem 'json'
 
 # Use unicorn as the web server
 # gem 'unicorn'

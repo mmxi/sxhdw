@@ -16,11 +16,14 @@ class User < ActiveRecord::Base
     c.logged_in_timeout 30.minutes
   end
 
+  validates_presence_of :site_id, :message => "该字段不能为空"
   validates_attachment_size :photo, :less_than => 100.kilobytes, :message => "图片尺寸大小应小于100KB"
   validates_attachment_content_type :photo,
     :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
     :message => "请选择图片类型文件"
-  
+
+  belongs_to :site, :counter_cache => true
+
   has_many :authorizations, :dependent => :destroy
   has_many :activities, :order => "updated_at desc"
   has_many :sns_activity_users

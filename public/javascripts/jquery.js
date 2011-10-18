@@ -6895,8 +6895,8 @@ jQuery.extend({
 		return jQuery.get( url, data, callback, "json" );
 	},
 
-	// Creates a full fledged settings object into target
-	// with both ajaxSettings and settings fields.
+	// Creates a full fledged setting object into target
+	// with both ajaxSettings and setting fields.
 	// If target is omitted, writes into ajaxSettings.
 	ajaxSetup: function ( target, settings ) {
 		if ( !settings ) {
@@ -7599,7 +7599,7 @@ function ajaxConvert( s, response ) {
 var jsc = jQuery.now(),
 	jsre = /(\=)\?(&|$)|\?\?/i;
 
-// Default jsonp settings
+// Default jsonp setting
 jQuery.ajaxSetup({
 	jsonp: "callback",
 	jsonpCallback: function() {

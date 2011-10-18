@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :bind, :login]
-  before_filter :require_user, :only => [:show, :edit, :update, :change_password]
   layout "home"
 
   def new
-    @user = User.new
+    @user = current_site.users.new
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = current_site.users.build(params[:user])
     if @user.save_without_session_maintenance
       @user.deliver_activation_instructions! # send activation email
       flash[:notice] = "确认信已经发到你的邮箱 #{@user.email} ，你需要点击邮件中的确认链接来完成注册。"
@@ -21,20 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id].to_i)
-  end
-
-  def edit
-    @user = current_user
-  end
-
-  def update
-    @user = current_user
-    if @user.update_attributes(params[:user])
-      flash[:success] = "设置更新成功"
-    else
-      flash[:error] = "设置更新失败"
-    end
-    redirect_to edit_user_path(@user)
   end
   
   def auth_callback
@@ -65,26 +50,6 @@ class UsersController < ApplicationController
         end
       end
     end
-    #@user = User.new(:nickname => session[:omniauth]["user_info"]["name"])
-    #@user_session = UserSession.new()
-    #if request.post?
-    #  @user_session = UserSession.new(params[:user_session])
-    #  if @user_session.save
-    #    #login success
-    #    @user = (UserSession.find).user
-    #    @new_auth = Authorization.create_from_hash(session[:omniauth], @user)
-    #    if @new_auth
-    #      flash[:success] = "用户绑定成功"
-    #      redirect_to root_path
-    #    else
-    #      flash[:success] = "用户绑定失败"
-    #      redirect_to user_bind_path
-    #    end
-    #  else
-    #    flash[:error] = "用户登录失败"
-    #    redirect_to user_bind_path
-    #  end
-    #end
   end
   
   def login
@@ -119,20 +84,5 @@ class UsersController < ApplicationController
     ret = ""
     1.upto(len) { |i| ret << chars[rand(chars.size-1)] }
     ret
-  end
-  
-  def change_password
-    @user = current_user
-    if request.put?
-      @user.password = params[:user][:password]
-      @user.password_confirmation = params[:user][:password_confirmation]
-      if (@user.password and @user.password_confirmation) && (@user.password == @user.password_confirmation)
-        @user.update_attributes(params[:user])
-        flash[:success] = "修改密码成功"
-      else
-        flash[:error] = "请检查密码，重新输入"
-      end
-      redirect_to change_password_user_path(@user)
-    end
   end
 end

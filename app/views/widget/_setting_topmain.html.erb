@@ -1,0 +1,12 @@
+<div id="setting_topmain">
+  <div id="setting_topmain_inner" class="container_16">
+    <h2><%= image_tag @user.face_url||@user.photo(:s48), :width => 48, :height => 48 %>帐号设置</h2>
+    <ul class="tabnav">
+      <li>
+        <%= link_to "个人资料", edit_setting_account_path, :class => ("active" if controller.action_name == "edit") %>
+      </li>
+      <li><%= link_to "修改密码", change_password_setting_account_path, :class => ("active" if controller.action_name == "change_password") %></li>
+      <li><a href="#">其它设置</a></li>
+    </ul>
+  </div>
+</div>
