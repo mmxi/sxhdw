@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user_session, :current_user, :current_site, :logged_in?
   protect_from_forgery
-  helper_method :current_user_session, :current_user, :current_site
 
   private
     def current_user_session
@@ -16,15 +16,20 @@ class ApplicationController < ActionController::Base
     def require_user
       unless current_user
         store_location
-        flash[:notice] = t("message.You must be logged in to access this page")
-        redirect_to login_path
+        flash[:notice] = "请先登录"
+        respond_to do |format|
+          format.html do
+            redirect_to login_path
+          end
+          format.js { render :text => "document.location='#{login_path}'"}
+        end
       end
     end
 
     def require_no_user
       if current_user
         store_location
-        flash[:notice] = t("message.You must be logged out to access this page")
+        flash[:notice] = "您必须退出才可以访问这个页面"
         redirect_to user_path(current_user)
       end
     end
@@ -57,5 +62,9 @@ class ApplicationController < ActionController::Base
         user_image = oauth["user_info"]["image"]
       end
       user_image
+    end
+  
+    def logged_in?
+      !!current_user
     end
 end
