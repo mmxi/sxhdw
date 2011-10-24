@@ -7,3 +7,4 @@ tmp/
 /config.ru
 /public/upload/
 /public/uploadfiles/
+/.idea/
