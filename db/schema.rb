@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111016102107) do
+ActiveRecord::Schema.define(:version => 20111020090701) do
 
   create_table "act_texts", :force => true do |t|
     t.integer "activity_id"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20111016102107) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
-    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "forums", :force => true do |t|
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(:version => 20111016102107) do
 
   add_index "forums", ["position", "site_id"], :name => "index_forums_on_position_and_site_id"
   add_index "forums", ["site_id", "permalink"], :name => "index_forums_on_site_id_and_permalink"
+
+  create_table "posts", :force => true do |t|
+    t.integer  "site_id"
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.text     "body"
+    t.text     "body_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["created_at", "forum_id"], :name => "index_posts_on_forum_id"
+  add_index "posts", ["created_at", "topic_id"], :name => "index_posts_on_topic_id"
+  add_index "posts", ["created_at", "user_id"], :name => "index_posts_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -100,12 +115,13 @@ ActiveRecord::Schema.define(:version => 20111016102107) do
     t.integer  "activity_id"
     t.boolean  "attendee"
     t.boolean  "interest"
+    t.boolean  "share"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "sns_activity_users", ["activity_id"], :name => "index_sns_activity_users_on_activity_id"
-  add_index "sns_activity_users", ["user_id", "activity_id", "attendee"], :name => "index_sns_activity_users_on_user_id_and_activity_id_and_attendee"
+  add_index "sns_activity_users", ["user_id"], :name => "index_sns_activity_users_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -122,6 +138,27 @@ ActiveRecord::Schema.define(:version => 20111016102107) do
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name"
+
+  create_table "topics", :force => true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.integer  "hits",            :default => 0
+    t.integer  "sticky",          :default => 0
+    t.integer  "posts_count",     :default => 0
+    t.boolean  "locked",          :default => false
+    t.integer  "last_post_id"
+    t.datetime "last_updated_at"
+    t.integer  "last_user_id"
+    t.integer  "site_id"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["forum_id", "permalink"], :name => "index_topics_on_forum_id_and_permalink"
+  add_index "topics", ["last_updated_at", "forum_id"], :name => "index_topics_on_last_updated_at_and_forum_id"
+  add_index "topics", ["sticky", "last_updated_at", "forum_id"], :name => "index_topics_on_sticky_and_last_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "login",                                 :null => false
@@ -148,10 +185,12 @@ ActiveRecord::Schema.define(:version => 20111016102107) do
     t.datetime "photo_updated_at"
     t.string   "face_url"
     t.integer  "site_id"
+    t.integer  "posts_count"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token", :unique => true
+  add_index "users", ["site_id", "posts_count"], :name => "index_users_on_site_id_and_posts_count"
 
 end
