@@ -41,24 +41,23 @@ describe User do
       subject.email = "@163.com"
       should_not be_valid
       subject.errors[:email].should_not be_blank
-      zhangsan = Factory.create(:zhangsan)
       subject.email = "zhangsan@gmail.com"
       should_not be_valid
-      subject.errors[:email].should_not be_blank
+      subject.errors[:email].should be_blank
     end
   end
 
   describe "User create" do
     it "should be create instance given factory object" do
       lambda {
-        zhangsan = Factory.create(:zhangsan)
+        create_user(:zhangsan)
       }.should change{ User.count }.by(1)
     end
   end
 
   describe "User attributes update" do
     it "should not validate field" do
-      zhangsan = Factory.create(:zhangsan)
+      zhangsan = create_user(:zhangsan)
       zhangsan.should be_valid
     end
   end
@@ -66,7 +65,7 @@ describe User do
   describe "test function .find_by_login_or_email" do
     it "should find the user if login or mail is correct" do
       lambda {
-        zhangsan = Factory.create(:zhangsan)
+        create_user(:zhangsan)
       }.should change{ User.count }.by(1)
       User.find_by_login_or_email("zhangsan").should_not be_nil
       User.find_by_login_or_email("zhangsan@gmail.com").should_not be_nil
@@ -75,10 +74,14 @@ describe User do
 
   describe "test" do
     before do
-      zhangsan = Factory.create(:zhangsan)
+      zhangsan = create_user(:zhangsan)
     end
     it "should do this" do
       pending
     end
+  end
+  
+  def create_user(name)
+    @user ||= current_site.users.create(Factory.attributes_for(name))
   end
 end

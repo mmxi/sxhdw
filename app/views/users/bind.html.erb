@@ -6,7 +6,7 @@
   <%= form_for @user_session, :url => user_bind_path, :html => {:class => "form"} do |f| %>
     <%= render "widget/flashmessage" %>
     <div class="clearfix">
-      <%= f.label :login, "用户名 / 邮箱：" %>
+      <%= f.label :login, "用户名或邮箱：" %>
       <div class="input"><%= f.text_field :login, :class => "input_m" %></div>
     </div>
     <div class="clearfix">

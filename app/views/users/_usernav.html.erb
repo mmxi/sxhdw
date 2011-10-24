@@ -1,0 +1,11 @@
+<ul class="tabnav usernav">
+	<li>
+		<%= link_to "个人主页", user_path, :class => ("active" if controller.action_name == "edit") %>
+	</li>
+	<li><%= link_to "论坛" %></li>
+	<li><%= link_to "活动" %></li>
+	<li><%= link_to "分享" %></li>
+	<li><%= link_to "日志" %></li>
+	<li><%= link_to "电影" %></li>
+	<li><%= link_to "相册" %></li>
+</ul>

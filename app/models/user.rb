@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+  belongs_to :site, :counter_cache => true
+
+  has_many :authorizations, :dependent => :destroy
+  has_many :activities, :order => "updated_at desc"
+  has_many :sns_activity_users
+  has_many :sns_activities, :through => :sns_activity_users, :source => :activity
+  has_many :topics
+  has_many :posts
+  
   acts_as_authentic do |c|
     # configuration for email
     c.validates_length_of_email_field_options = {:in => 6..100, :too_short => "电子邮件地址太短，看起来不像是正确的"}
@@ -22,16 +31,11 @@ class User < ActiveRecord::Base
     :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
     :message => "请选择图片类型文件"
 
-  belongs_to :site, :counter_cache => true
-
-  has_many :authorizations, :dependent => :destroy
-  has_many :activities, :order => "updated_at desc"
-  has_many :sns_activity_users
-  has_many :sns_activities, :through => :sns_activity_users, :source => :activity
-
   attr_accessor :password_confirmation
   attr_accessible :login, :email, :nickname, :password, :password_confirmation, :active, :photo
   attr_protected :active
+  attr_readonly :posts_count
+  
   has_attached_file :photo, :styles => {:normal => "180x180#", :s120 => "120x120#", :s48 => "48x48#", :s32 => "32x32#", :s24 => "24x24#" }, :url => "/upload/:class/:attachment/:hashed_path/:id_:style.:extension", :path => ":rails_root/public/upload/:class/:attachment/:hashed_path/:id_:style.:extension"
 
   def activate!
