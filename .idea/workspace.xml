@@ -161,7 +161,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/users.rb" afterPath="$PROJECT_DIR$/spec/factories/users.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" />
     </list>
-    <list default="true" id="e86b2cb7-17c3-49d4-be7b-adb41ca24260" name="New changelist" comment="New changelist">
+    <list default="true" id="e86b2cb7-17c3-49d4-be7b-adb41ca24260" name="New changelist" comment="add /public/upload and /public/uploadfiles to .gitignore">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -189,17 +189,7 @@
     <favorites_list name="sxhdw" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="58" selection-end="92" vertical-scroll-proportion="0.32786885">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -918,7 +908,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add forum controller model and other about forum" />
+    <option name="LAST_COMMIT_MESSAGE" value="add /public/upload and /public/uploadfiles to .gitignore" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -937,6 +927,7 @@
     <MESSAGE value="add ajax login" />
     <MESSAGE value="add ajax loading div" />
     <MESSAGE value="add forum controller model and other about forum" />
+    <MESSAGE value="add /public/upload and /public/uploadfiles to .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1019,7 +1010,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="58" selection-end="92" vertical-scroll-proportion="0.32786885">
+        <state line="3" column="4" selection-start="35" selection-end="35" vertical-scroll-proportion="0.14051522">
           <folding />
         </state>
       </provider>
