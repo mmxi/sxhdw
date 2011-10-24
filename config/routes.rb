@@ -1,7 +1,9 @@
 Sxhdw::Application.routes.draw do
   resources :user_sessions
   resources :users, :only => [:show, :new, :create]
-  resources :forums
+  resources :forums do
+    resources :topics
+  end
   
   resources :activities, :path => :events, :only => [:index, :show, :join] do
     member do
