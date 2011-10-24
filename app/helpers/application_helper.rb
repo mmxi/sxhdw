@@ -8,4 +8,8 @@ module ApplicationHelper
     container && opts[:container] ||= container
     javascript_tag("$('#topics').pageless(#{opts.to_json});")
   end
+
+  def format_text(text)
+    RedCloth.new(auto_link(text.to_s)).to_html(:textile,:refs_smiley)
+  end
 end

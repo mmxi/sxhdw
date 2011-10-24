@@ -25,7 +25,7 @@ class TopicsController < ApplicationController
     @topic.user = current_user
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to forum_path(@forum) }
+        format.html { redirect_to forum_topic_path(@forum, @topic) }
         format.js
       else
         format.html { render :action => "new" }

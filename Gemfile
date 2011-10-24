@@ -29,6 +29,7 @@ gem 'rails3-settings', '~> 1.0.0', :require => 'settings'
 gem 'json'
 gem 'rmagick'
 gem 'permalink_fu'
+gem "RedCloth", :require => 'redcloth'
 
 # Use unicorn as the web server
 # gem 'unicorn'
