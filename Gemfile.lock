@@ -50,7 +50,7 @@ GEM
     faraday (0.6.1)
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
-      rack (< 2, >= 1.1.0)
+      rack (>= 1.1.0, < 2)
     gravatar_image_tag (1.0.0)
     i18n (0.5.0)
     jquery-rails (1.0.14)
@@ -115,6 +115,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    permalink_fu (1.0.0)
     polyglot (0.3.2)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.2.4)
@@ -151,6 +152,7 @@ GEM
     rdoc (3.9.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rmagick (2.13.1)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -199,9 +201,11 @@ DEPENDENCIES
   omniauth (= 0.2.6)
   omniauth_china (= 0.1.1)
   paperclip
+  permalink_fu
   rails (= 3.0.10)
   rails3-settings (~> 1.0.0)
   rails_kindeditor (~> 0.2.0)
+  rmagick
   rspec-rails
   ruby-debug
   spork (~> 0.9.0.rc)

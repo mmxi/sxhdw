@@ -27,6 +27,8 @@ gem 'paperclip'
 gem 'spork', '~> 0.9.0.rc'
 gem 'rails3-settings', '~> 1.0.0', :require => 'settings'
 gem 'json'
+gem 'rmagick'
+gem 'permalink_fu'
 
 # Use unicorn as the web server
 # gem 'unicorn'

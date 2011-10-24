@@ -71,4 +71,12 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  def current_site
+    @current_site ||= Factory.create(:site)
+  end
+
+  def current_user
+    @user ||= current_site.users.create(Factory.attributes_for(:user))
+  end
 end

@@ -1,0 +1,37 @@
+<%= render :partial => "forumnav" %>
+
+<div class="grid_11">
+  <%= render :partial => "widget/flashmessage" %>
+  <div class="topics">
+    <%= render @topics %>
+  </div>
+</div>
+
+<div class="grid_5">
+  <div id="info" style="display: none;">
+    <% if logged_in? %>
+      <%= render :partial => "topics/form_a", :locals => {:submit_txt => "发布帖子"} %>
+    <% else %>
+      <%= render :partial => "user_sessions/form_a" %>
+    <% end %>
+  </div>
+  
+  <%= link_to "发帖", new_forum_topic_path(@forum) %>
+
+  <a href="#info" rel="facebox">发帖</a>
+  
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(document).bind('reveal.facebox', function(){
+        $('div.smiley a').click(function(){
+          $("#facebox textarea").insertAtCaret('[em:' + this.className + ']');
+        });
+        $('#facebox textarea').keydown(function (e) {
+          if (e.ctrlKey && e.keyCode == 13) {
+            alert("hello");
+          }
+        });
+      })
+    });
+</script>
+</div>

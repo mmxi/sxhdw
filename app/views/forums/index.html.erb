@@ -1,0 +1,12 @@
+<%= render :partial => "forumnav" %>
+<div class="grid_11">
+  <div id="topics" class="topics">
+    <%= render @topics %>
+  </div>
+  <%= will_paginate(@topics) %>
+  <%= pageless(@topics.total_pages, forums_path) %>
+</div>
+
+<div class="grid_5">
+  <%= link_to "ajax测试", forums_path, :remote => true %>
+</div>
