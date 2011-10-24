@@ -9,12 +9,16 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
-      flash[:success] = "登录成功"
-      redirect_to user_path(UserSession.find.user)
-    else
-      flash[:error] = "登录失败"
-      redirect_to login_path
+    respond_to do |format|
+      if @user_session.save
+        flash[:success] = "登录成功"
+        format.html { redirect_to user_path(@user_session.user) }
+        format.js { render :text => "window.location.reload();" }
+      else
+        flash[:error] = "登录失败"
+        format.html { redirect_to login_path }
+        format.js { render :text => "window.location.reload();" }
+      end
     end
   end
 
