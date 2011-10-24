@@ -1,0 +1,3 @@
+$('#topic-<%= @topic.id %>').replaceWith("<%= escape_javascript(render :partial => @topic) %>");
+$.facebox.close();
+$('#topic-<%= @topic.id %>').effect("highlight", {color:"#b1b1b1"}, 3000);

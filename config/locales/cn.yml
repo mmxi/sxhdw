@@ -24,8 +24,6 @@ cn:
       
   message:
     Account registered!:  "恭喜！注册成功"
-    You must be logged out to access this page: "您必须退出才可以访问这个页面"
-    You must be logged in to access this page:  "请先登录"
     Successfully binded: "绑定成功！"
     Bind failed:  "绑定失败!"
     Register: "注册"
@@ -60,3 +58,39 @@ cn:
     qzone:  "QQ"
     douban: "豆瓣网"
     google: "Google"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: '半分钟'
+      less_than_x_seconds:
+        zero: 'less than 1 second'
+        one: '1 秒'
+        other: '%{count} 秒'
+      x_seconds:
+        one: '1 秒'
+        other: '%{count} 秒'
+      less_than_x_minutes:
+        zero: 'less than a minute'
+        one: '1 分钟'
+        other: '%{count} 分钟'
+      x_minutes:
+        one: '1 分钟'
+        other: '%{count} 分钟'
+      about_x_hours:
+        one: '约一小时'
+        other: '%{count} 小时'
+      x_days:
+        one: '1 天'
+        other: '%{count} 天'
+      about_x_months:
+        one: '约一月'
+        other: '%{count} 月'
+      x_months:
+        one: '1 月'
+        other: '%{count} 月'
+      about_x_years:
+        one: '约一年'
+        other: '%{count} 年'
+      over_x_years:
+        one: 'over 1 year'
+        other: '%{count} 年'
