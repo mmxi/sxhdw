@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="89e46185-3b07-4841-871b-0a7cd9dca280" name="Default" comment="add ajax login" />
-    <list default="true" id="e86b2cb7-17c3-49d4-be7b-adb41ca24260" name="New changelist" comment="New changelist">
+    <list id="89e46185-3b07-4841-871b-0a7cd9dca280" name="Default" comment="add ajax login">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/&quot;public/uploadfiles/users/photos/6/选区019/original.png&quot;" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/facebox/closelabel.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/facebox/loading.gif" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/darrow.gif" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/down_arrow.gif" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/floading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/buy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/camera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/coffee.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/film.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/house.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/forums/photo.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_login.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_login_backup.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/loading.gif" />
@@ -90,26 +79,14 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/users/photos/e36/985/3df/34_s48.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploadfiles/users/photos/5/doubanicon-24/original.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/fixtures/images/rails.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/MIT-LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/aliang.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/cjdx.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/activations_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/admin/forums_controller.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/admin/sites_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/forums_controller.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/setting/users_controller.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/topics_controller.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/activations_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/admin/forums_helper.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/admin/sites_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/forums_helper.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/settings/users_helper.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/topics_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/forum.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/notifier.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/post.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/site.rb" />
@@ -117,18 +94,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/topic.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/activations/create.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/activities/join.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/forums/create.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/forums/destroy.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/forums/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/forums/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/forums/update.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forums/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forums/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forums/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forums/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forums/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notifier/activation_instructions.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notifier/welcome.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_tabnav.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_usernav.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/widget/_flashmessage.html.erb" />
@@ -137,7 +102,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/paperclip_extensions.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111002051141_create_sns_activity_users.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111005122635_add_photo_to_users.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111015071716_create_forums.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111015073448_create_sites.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111016020031_create_settings.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111016102107_add_site_id_to_users.rb" />
@@ -160,60 +124,26 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/users/photos/c4c/a42/38a/1_s32.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/users/photos/c4c/a42/38a/1_s48.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/activations_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/admin/forums_controller_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/admin/sites_controller_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/authorizations_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/forums_controller_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/settings/users_controller_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/topics_controller_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/forums.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/posts.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/sites.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/sns_activity_users.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/topics.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/fixtures/images/test.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/activations_helper_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/admin/forums_helper_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/admin/sites_helper_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/forums_helper_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/settings/users_helper_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/topics_helper_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/forum_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/post_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/site_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/sns_activity_user_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/topic_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/requests/forums_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/routing/forums_routing_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/activations/create.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/admin/forums/create.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/admin/forums/destroy.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/admin/forums/edit.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/admin/forums/new.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/admin/forums/update.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/forums/edit.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/forums/index.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/forums/new.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/forums/show.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/Rakefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/dynamic_form.gemspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/init.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/lib/action_view/locale/en.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/lib/dynamic_form.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/test/dynamic_form_i18n_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/test/dynamic_form_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/plugins/dynamic_form/test/test_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sxhdw.iml" afterPath="$PROJECT_DIR$/.idea/sxhdw.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forums/_forumnav.html.erb" afterPath="$PROJECT_DIR$/app/views/forums/_forumnav.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forums/index.js.erb" afterPath="$PROJECT_DIR$/app/views/forums/index.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/forum.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/forum.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/topics/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/topics/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/topics/_form_a.html.erb" afterPath="$PROJECT_DIR$/app/views/topics/_form_a.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/topics/_topic.html.erb" afterPath="$PROJECT_DIR$/app/views/topics/_topic.html.erb" />
@@ -230,7 +160,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/application.js" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/users.rb" afterPath="$PROJECT_DIR$/spec/factories/users.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
+    </list>
+    <list default="true" id="e86b2cb7-17c3-49d4-be7b-adb41ca24260" name="New changelist" comment="New changelist">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sxhdw.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -256,7 +189,17 @@
     <favorites_list name="sxhdw" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="58" selection-end="92" vertical-scroll-proportion="0.32786885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -273,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/topics/_form_a.html.erb" />
         <option value="$PROJECT_DIR$/public/javascripts/jquery.pageless.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/test.less" />
@@ -289,6 +231,7 @@
         <option value="$PROJECT_DIR$/spec/models/site_spec.rb" />
         <option value="$PROJECT_DIR$/spec/models/forum_spec.rb" />
         <option value="$PROJECT_DIR$/spec/models/topic_spec.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -372,47 +315,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sxhdw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sxhdw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sxhdw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sxhdw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -442,8 +345,8 @@
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.ControllersFolderNode" />
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.PublicFolderNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1015,7 +918,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ajax loading div" />
+    <option name="LAST_COMMIT_MESSAGE" value="add forum controller model and other about forum" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1033,16 +936,12 @@
     <MESSAGE value="add user.rb" />
     <MESSAGE value="add ajax login" />
     <MESSAGE value="add ajax loading div" />
+    <MESSAGE value="add forum controller model and other about forum" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/topics_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="13" selection-start="1089" selection-end="1089" vertical-scroll-proportion="3.7735848" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/topic.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="7" selection-start="2415" selection-end="2415" vertical-scroll-proportion="0.23214285" />
@@ -1116,6 +1015,13 @@
     <entry file="file://$PROJECT_DIR$/app/views/topics/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="35" selection-start="49" selection-end="49" vertical-scroll-proportion="0.057471264" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="58" selection-end="92" vertical-scroll-proportion="0.32786885">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
