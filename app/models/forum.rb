@@ -25,7 +25,6 @@ class Forum < ActiveRecord::Base
   def self.expand_tree(forums)
     returning(Array.new) do |output|
       forums.each do |forum|
-        forum.name = '-------------------' * forum.ancestors.size + forum.name
         output << forum
         output.concat expand_tree(forum.children) if forum.has_children?
       end
