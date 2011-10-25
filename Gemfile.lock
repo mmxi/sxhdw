@@ -29,6 +29,7 @@ GEM
       activemodel (= 3.0.10)
       activesupport (= 3.0.10)
     activesupport (3.0.10)
+    acts_as_tree (0.1.1)
     addressable (2.2.4)
     arel (2.0.10)
     authlogic (3.0.3)
@@ -190,6 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  acts_as_tree
   authlogic
   carrierwave
   client_side_validations

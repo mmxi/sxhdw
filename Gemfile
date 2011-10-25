@@ -30,6 +30,7 @@ gem 'json'
 gem 'rmagick'
 gem 'permalink_fu'
 gem "RedCloth", :require => 'redcloth'
+gem 'acts_as_tree'
 
 # Use unicorn as the web server
 # gem 'unicorn'

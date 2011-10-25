@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020090701) do
+ActiveRecord::Schema.define(:version => 20111025123833) do
 
   create_table "act_texts", :force => true do |t|
     t.integer "activity_id"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20111020090701) do
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
+    t.string   "css_name"
   end
 
   add_index "forums", ["position", "site_id"], :name => "index_forums_on_position_and_site_id"

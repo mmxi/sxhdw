@@ -5,8 +5,18 @@
     <div class="input"><%= f.text_field :name, :class => "input_m" %></div>
   </div>
   <div class="clearfix">
+    <%= f.label :parent_id, "父版块" %>
+    <div class="input">
+      <%= f.collection_select :parent_id, Forum.top, :id, :name, :include_blank => true  %>
+    </div>
+  </div>
+  <div class="clearfix">
     <%= f.label :name, "版块位置：" %>
     <div class="input"><%= f.text_field :position, :class => "input_ss" %></div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :css_name, "样式名字：" %>
+    <div class="input"><%= f.text_field :css_name, :class => "input_s" %></div>
   </div>
   <div class="clearfix">
     <%= f.label :description, "版块描述：" %>

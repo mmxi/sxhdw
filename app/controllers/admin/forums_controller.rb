@@ -3,7 +3,7 @@ class Admin::ForumsController < ApplicationController
   layout "admin"
 
   def index
-    @forums = current_site.forums
+    @forums = Forum.expand_tree(current_site.forums.top)
   end
 
   def new
