@@ -6,7 +6,7 @@
 		<li><%= link_to "最新分享" %></li>
 		<li><%= link_to "最新活动" %></li>
 	</ul>
-	<ul class="fr">
+	<ul class="dropdown fr">
 		<% if current_user.blank? %>
 		<li>欢迎您，游客</li>
 		
@@ -14,29 +14,30 @@
 		<li><span class="icon qzone"></span><%= link_to "QQ登录", "/auth/qzone", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
 		<li><span class="icon sina"></span><%= link_to "微博登录", "/auth/tsina", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
 		<li class="menu">
-			<%= link_to "其它方式", "javascript:void(0)" %>
+			<a href="javascript:void(0)">其它方式</a>
 			<span class="arrow"></span>
-			<ul class="submenu" style="display: none;">
-				<li><span class="icon renren"></span><%= link_to "人人帐号", "/auth/renren", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
-				<li><span class="icon qq"></span><%= link_to "腾讯微博", "/auth/tqq", :class => "popup", :"data-width" => 800, :"data-height" => 600 %></li>
-				<li><span class="icon douban"></span><%= link_to "豆瓣帐号", "/auth/douban", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></li>
-				<li><span class="icon google"></span><%= link_to "谷歌帐号", "/auth/google", :class => "popup", :"data-width" => 900, :"data-height" => 500 %></li>
-			</ul>
+      <dl style="visibility:hidden;">
+        <dt class="first"><a href="javascript:void(0)">其它方式</a></dt>
+        <dd><span class="icon renren"></span><%= link_to "人人帐号", "/auth/renren", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></dd>
+        <dd><span class="icon qq"></span><%= link_to "腾讯微博", "/auth/tqq", :class => "popup", :"data-width" => 800, :"data-height" => 600 %></dd>
+        <dd><span class="icon douban"></span><%= link_to "豆瓣帐号", "/auth/douban", :class => "popup", :"data-width" => 600, :"data-height" => 400 %></dd>
+        <dd><span class="icon google"></span><%= link_to "谷歌帐号", "/auth/google", :class => "popup", :"data-width" => 900, :"data-height" => 500 %></dd>
+      </dl>
 		</li>
 		<li><%= link_to "免费注册", signup_path, :class => "register" %></li>
 		<% else %>
 		<li class="tinyman menu">
 			<%= image_tag(current_user.photo(:s24)) %><%= link_to current_user.display_name, "javascript:void(0);" %>
 			<span class="arrow"></span>
-			<ul class="submenu" style="display: none;">
-        <li><%= link_to "个人中心", user_path(current_user) %></li>
-				<li><%= link_to "编辑资料", edit_setting_account_path %></li>
-        <li><%= link_to "站点管理", admin_sites_path %></li>
-			</ul>
+			<dl style="visibility:hidden;">
+        <dd><%= link_to "个人中心", user_path(current_user) %></dd>
+				<dd><%= link_to "编辑资料", edit_setting_account_path %></dd>
+        <dd><%= link_to "站点管理", admin_sites_path %></dd>
+			</dL>
 		</li>
 		<li><%= link_to "发布活动", new_admin_activity_path %></li>
 		<li><%= link_to "退出", logout_path %></li>
 		<% end %>
 	</ul>
-	<div class="clearfix"></div>
+	<div class="clear"></div>
 </div>

@@ -60,10 +60,10 @@ input.button::-moz-focus-inner{ border-color:transparent!important; }
 .bbutton {padding: 3px 5px;}
 .mbutton {padding: 1px 5px;}
 
-li.menu{ position:relative; cursor:pointer; }
+li.menu{ position:relative; cursor:pointer; padding-left:1px; text-decoration:none; }
 li.menu ul{ position:absolute; background: white; }
 li.menu a{ float:left; }
-li.menu span.arrow{ display:inline; float:left; height:30px; width:11px; margin-left:5px; background:url(../images/down_arrow.gif) no-repeat 0px 50%; }
+li.menu span.arrow{ display:inline; float:left; height:30px; width:11px; margin-left:5px; background:url(../images/down_arrow.gif) no-repeat 0px 10px; }
 span.qzone{ background:url(../images/icon_login.png) no-repeat -91px 0px; }
 span.sina{ background:url(../images/icon_login.png) no-repeat -69px 0; }
 span.renren{ background:url(../images/icon_login.png) no-repeat -23px 0; }
@@ -76,13 +76,18 @@ span.google{ background:url(../images/icon_login.png) no-repeat -136px 0; }
 #topnav .register{ color:@green-color; font-weight:bold; }
 #topnav .tinyman{ padding:0px 5px; }
 #topnav .tinyman img{ float:left; margin:3px 5px 0px 0px; vertical-align:middle;  font-size:175px; }
+#topnav .tinyman dl{top:30px; left:3px; padding-bottom:5px; }
+#topnav .tinyman dd{text-align:center; height:20px; line-height:20px;}
+#topnav .tinyman dd a{float:none;}
 #topnav ul li{ float:left; margin-left:10px; color:@gray-color; }
 #topnav ul.fl{ margin-left: 20px; }
 #topnav ul.fr{ margin-right: 30px; }
 #topnav span.icon{ display:inline-block; float:left; width:23px; height:23px; margin-top:2px; }
-#topnav .menu ul{ border:1px solid lighten(@gray-color, 30%); left: -1px; top:27px; padding: 5px; }
-#topnav .menu ul li{ width:80px; height:23px; line-height:23px; margin: 0px; }
-#topnav .menu ul li span{ margin: 0px; }
+#topnav dl{ width:79px; margin-bottom:0px; border:1px solid @border-color; position:absolute; top:1px; left:-5px; background:#fff; }
+#topnav dt{ background:#FFF9F1 url(../images/down_arrow.gif) no-repeat 62px 8px; height:30px; line-height:26px;}
+#topnav dt a{ text-decoration:none; margin-left:5px; }
+#topnav dt a:hover{ color:@link-color; }
+#topnav dd{ height:30px; line-height:30px;}
 
 /* ul.table */
 ul.table { margin-left:10px; border-top:1px solid #e5eff8; border-left:1px solid #e5eff8; border-right:1px solid #e5eff8; }

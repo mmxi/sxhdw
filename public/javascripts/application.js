@@ -33,76 +33,33 @@ jQuery.fn.extend({
  }
 })
 
-function insertText(obj,str) {
-	obj.focus();
-	if (document.selection) {
-		var sel = document.selection.createRange();
-		sel.text = str;
-	} else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-		var startPos = obj.selectionStart,
-			endPos = obj.selectionEnd,
-			cursorPos = startPos,
-			tmpStr = obj.value;
-		obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
-		cursorPos += str.length;
-		obj.selectionStart = obj.selectionEnd = cursorPos;
-	} else {
-		obj.value += str;
-	}
+
+function init_dropdownmenu(){
+  $("ul.dropdown li").hover(function(){
+    $(this).addClass("hover");
+    $('dl:first',this).css('visibility', 'visible');
+    $('ul:first',this).css('visibility', 'visible');
+  }, function(){
+    $(this).removeClass("hover");
+    $('dl:first',this).css('visibility', 'hidden');
+    $('ul:first',this).css('visibility', 'hidden');
+  });
 }
 
-function moveEnd(obj){
-	obj.focus();
-	var len = obj.value.length;
-	if (document.selection) {
-		var sel = obj.createTextRange();
-		sel.moveStart('character',len);
-		sel.collapse();
-		sel.select();
-	} else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-		obj.selectionStart = obj.selectionEnd = len;
-	}
-}
-
-
-function dosomething(e) { alert("dosomething"); return false; }
 function popupCenter(url, width, height, name) {
 	var left = (screen.width/2)-(width/2);
 	var top = (screen.height/2)-(height/2);
 	window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
 }
 
-// popup menu
-function popup_menu(){
-	$("li.menu").click(function() {
-		$("ul.submenu").toggle();
-	});
-	
-	$("ul.submenu").mouseup(function() {
-		return false
-	});
-	$(document).mouseup(function(e) {
-		if($(e.target).parent("li.menu").length==0) {
-			$("ul.submenu").hide();
-		}
-	});
-}
-
 jQuery(document).ready(function(){
-    //jQuery("div#flash_message").fadeOut(5000);
 	jQuery(".popup").click(function(){
 		popupCenter(jQuery(this).attr("href"), jQuery(this).attr("data-width"), jQuery(this).attr("data-height"));
 		return false;
 	});
-	popup_menu(); // init popup menu
+	init_dropdownmenu(); // init dropdown menu
 	jQuery("#activity_start_time").datetimepicker();
 	jQuery("#activity_end_time").datetimepicker();
-	
-	jQuery(".tinyman").mouseover(function(){
-		$(this).css("background", "#ddd");
-	}).mouseout(function(){
-		$(this).css("background", "#fff");
-	});
   
   $(document).bind('ajaxSend', function(e, request, options) {
     if ('POST' == options.type) {
