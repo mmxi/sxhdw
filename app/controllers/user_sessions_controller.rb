@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UserSessionsController < ApplicationController
   layout "home"
   before_filter :require_no_user, :only => [:new, :create]

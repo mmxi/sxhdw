@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :bind, :login]
   layout "home"

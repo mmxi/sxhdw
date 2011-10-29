@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :current_site, :logged_in?
   protect_from_forgery

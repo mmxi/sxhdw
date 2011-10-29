@@ -1,13 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'authlogic'
-gem 'ruby-debug'
 
 #OAuthgem
 gem 'oa-oauth', '0.2.6'
@@ -25,22 +24,24 @@ gem 'rails_kindeditor', '~> 0.2.0'
 gem 'will_paginate'
 gem 'paperclip'
 gem 'spork', '~> 0.9.0.rc'
-gem 'rails3-settings', '~> 1.0.0', :require => 'settings'
+gem 'rails3-settings', :git => 'git://github.com/mceachen/rails-settings.git', :require => 'settings'
 gem 'json'
 gem 'rmagick'
 gem 'permalink_fu'
 gem "RedCloth", :require => 'redcloth'
 gem 'acts_as_tree'
+gem 'execjs'
+gem 'therubyracer'
 
 # Use unicorn as the web server
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug'
+#gem 'ruby-debug19'
 
 # Bundle the extra gems:
 # gem 'bj'

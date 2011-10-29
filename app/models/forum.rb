@@ -1,6 +1,8 @@
+# encoding: utf-8
 class Forum < ActiveRecord::Base
   belongs_to :site
-  has_many :topics
+  has_many :topics, :dependent => :delete_all
+  has_many :posts, :dependent => :delete_all
 
   acts_as_tree :order => 'position'
 

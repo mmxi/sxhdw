@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Admin::ForumsController < ApplicationController
   before_filter :require_user
   layout "admin"

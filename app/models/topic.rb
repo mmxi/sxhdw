@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Topic < ActiveRecord::Base
   belongs_to :user
   belongs_to :forum, :counter_cache => true
@@ -5,7 +6,7 @@ class Topic < ActiveRecord::Base
   belongs_to :last_user, :class_name => "User"
 
   has_one  :recent_post, :class_name => "Post"
-  has_many :posts, :dependent => :destroy
+  has_many :posts, :dependent => :delete_all
 
   validates_presence_of :title, :message => "标题不能为空"
   validates_presence_of :body, :on => :create, :message => "帖子内容不能为空"

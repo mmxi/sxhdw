@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AuthorizationsController < ApplicationController
   before_filter :require_user, :only => [:destroy]
 
