@@ -6,6 +6,8 @@
 @red-color:#FE2617;
 @border-color:#EFE0D7;
 
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+body{height:100%;background:#fff;font:12px/1.5em "\5b8b\4f53","Arial Narrow"; -webkit-text-size-adjust:none;}
 input{ display: inline-block; margin: 0px; padding: 0px; vertical-align: middle; }
 ul{ margin:0px; padding:0px; list-style-type:none; }
 li{ margin:0px; padding:0px; }
@@ -112,18 +114,21 @@ ul.table li a.subforum { margin-left:40px; }
 #setting_topmain_inner .tabnav a:link.active, #setting_topmain_inner .tabnav a:visited.active{ border-bottom:1px solid #FFF; cursor:default;}
 
 /* forumnav */
-.forumsnav_box{ background:#F3F3F3; }
-.forumsnav{ margin-top:20px; }
-.forumnav{ margin-bottom:20px; }
-.forumnav .icon{ float:left; display:inline-block; width:48px; height:48px; }
+.forumsnav{ margin:20px 0px; }
+.forumnav{ margin-bottom:5px; padding-top:5px; background:#f8f8f8; border-radius:5px; }
+.forumsnav .hover{ background: #f0f0f0; }
+.forumnav .icon{ float:left; display:inline-block; width:48px; height:48px; margint:0px; text-align:center; vertical-align:bottom; }
+.forumnav .icon strong{ display:inline-block; margin-top:28px; color:@gray-color; }
 .forumnav .nav{ float:left; margin-left:10px; width:162px; }
 .forumnav .nav li{ float:left; margin-right:5px; }
 .content{ margin-left:10px; }
-.forumnav span.film{ background:url(../images/forums/film.png) no-repeat; }
-.forumnav span.buy{ background:url(../images/forums/buy.png) no-repeat; }
-.forumnav span.coffee{ background:url(../images/forums/coffee.png) no-repeat; }
-.forumnav span.house{ background:url(../images/forums/house.png) no-repeat; }
-.forumnav span.photo{ background:url(../images/forums/photo.png) no-repeat; }
+.forumnav h2.business{background:url(../images/forums/scales.png) center 0px no-repeat; }
+.forumnav h2.xiuxian{background:url(../images/forums/games.png) center 0px no-repeat; }
+.forumnav h2.school{background:url(../images/forums/school.png) center 0px no-repeat; }
+.forumnav h2.shopping{background:url(../images/forums/shoppingcart.png) center 0px no-repeat; }
+.forumnav h2.car{background:url(../images/forums/car.png) center 0px no-repeat; }
+.forumnav h2.man{background:url(../images/forums/man.png) center 0px no-repeat; }
+
 
 /* topic */
 .topic { padding:10px; border-bottom:1px solid @border-color; }
@@ -192,7 +197,9 @@ height: 30px;
 .topic_form .smiley .faint{background:url(../images/mantou.png) -912px; }
 .topic_form .floading { width:400px; float:left; text-align:right; line-height:23px; }
 
-
+/* .breadcrumb */
+.breadcrumb{ height:26px; background:#F0F0F0 url(../images/home.gif) 5px center no-repeat; margin:20px 0px; padding-left:25px; color:@gray-color; }
+.breadcrumb a{ display:inline-block; line-height:26px; padding-right:15px; margin-right:10px;  background:#F0F0F0 url(../images/separator.gif) right 0px no-repeat; }
 
 
 #main h2{ margin:20px 0px 20px 20px; }

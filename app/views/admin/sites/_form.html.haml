@@ -1,0 +1,13 @@
+= form_for [:admin, @site], :html => {:class => "form" }, :validate => true do |f|
+  = render :partial => "widget/flashmessage"
+  .clearfix
+    = f.label :name, "站点名称："
+    .input= f.text_field :name, :class => "input_m"
+  .clearfix
+    = f.label :host, "站点网址："
+    .input= f.text_field :host, :class => "input_m"
+  .clearfix
+    = f.label :description, "站点描述："
+    .input= f.text_area :description, :class => "text_m"
+  .clearfix
+    .indent= f.submit submit_txt, :class => "button bbutton"

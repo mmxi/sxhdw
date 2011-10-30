@@ -1,0 +1,9 @@
+%ul.tabnav.usernav
+  %li
+    = link_to "个人主页", user_path, :class => ("active" if controller.action_name == "edit")
+  %li= link_to "论坛"
+  %li= link_to "活动"
+  %li= link_to "分享"
+  %li= link_to "日志"
+  %li= link_to "电影"
+  %li= link_to "相册"

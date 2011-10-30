@@ -1,0 +1,9 @@
+- content_for :forumnav do
+  = render :partial => "forumnavs"
+.grid_11
+  #topics.topics
+    = render @topics
+  = will_paginate(@topics)
+  = pageless(@topics.total_pages, forums_path)
+.grid_5
+  = link_to "ajax测试", forums_path, :remote => true

@@ -1,0 +1,6 @@
+.breadcrumb
+  = render_breadcrumbs :separator => ''
+.grid_11
+  - @forum.children.each do |forum|
+    = forum.name
+.grid_5

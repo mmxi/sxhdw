@@ -1,0 +1,31 @@
+= form_for [:admin, @activity], :validate => true do |f|
+  %ul
+    %li
+      %span.label 标题：
+      = f.text_field :act_subject, :class => "inputField_b"
+      %span.need
+        %em *
+    %li
+      %span.label 时间：
+      = f.text_field :start_time, :class => "inputField_m"
+      %span.sep 至
+      = f.text_field :end_time, :class => "inputField_m"
+    %li
+      %span.label 地点：
+      = f.text_field :act_place, :class => "inputField_bb"
+      %span.need
+        %em *
+    = f.fields_for :act_text do |act_text|
+      %li.content
+        %span.label
+          %em> *
+          活动描述：
+        = act_text.text_area :act_description, :id => "kindeditor_id"
+    %li
+      %span.label 标签：
+      = f.text_field :tag_list, :class => "inputField_b"
+      %span.need 标签之间用逗号隔开
+    %li
+      %span.label 活动封面或海报：
+      = link_to "选择文件", "javascript:void(0);", :id => "upload_button"
+    %li.indent= f.submit "提交", :class => "button bbutton"

@@ -1,0 +1,10 @@
+%h2
+  = @user.display_name
+  的个人资料
+.grid_11
+  = render "widget/flashmessage"
+  = render "usernav"
+.grid_5
+  %p
+    = image_tag @user.face_url || @user.photo(:s120)
+    = @user.display_name

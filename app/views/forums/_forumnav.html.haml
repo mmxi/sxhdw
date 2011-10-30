@@ -1,0 +1,8 @@
+.forumsnav
+  - @parent_forums.each do |pforums|
+    .grid_8.forumnav
+      %h2{:class => "icon #{pforums.css_name}"}
+        %strong= pforums.name
+      - pforums.children.each do |sforums|
+        = link_to sforums.name, forum_path(sforums)
+  .clear

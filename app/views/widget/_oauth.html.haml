@@ -1,0 +1,15 @@
+.cbox.other_login.fr
+  - if @user_action_type == "login"
+    %h3
+      还没有活动网帐号，#{link_to "注册活动网用户", "/signup"}
+  - elsif @user_action_type == "register"
+    %h3
+      已经拥有活动网帐号，#{link_to "从这里登录", "/login"}
+  %p 你也可以通过站外账号进行登录！
+  %ul
+    %li.sina= link_to "", "/auth/tsina", :class => "popup", :"data-width" => 600, :"data-height" => 400
+    %li.qq= link_to "", "/auth/tqq", :class => "popup", :"data-width" => 800, :"data-height" => 600
+    %li.renren= link_to "", "/auth/renren", :class => "popup", :"data-width" => 600, :"data-height" => 400
+    %li.qzone= link_to "", "/auth/qzone", :class => "popup", :"data-width" => 600, :"data-height" => 400
+    %li.google= link_to "", "/auth/google", :class => "popup", :"data-width" => 600, :"data-height" => 400
+    %li.douban= link_to "", "/auth/douban", :class => "popup", :"data-width" => 600, :"data-height" => 400

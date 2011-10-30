@@ -1,0 +1,11 @@
+= render :partial => "widget/flashmessage"
+%ul.table
+  - @sites.each do |site|
+    %li{:class => cycle("odd", "even")}
+      = link_to site.name, [:admin, site]
+      %span.operate
+        = "当前默认 | " if site == current_site
+        = link_to "设为默认站点", set_default_site_admin_site_path(site)
+        | #{link_to "编辑", edit_admin_site_path(site)} | #{link_to "删除", [:admin, site], :confirm => "确定删除", :method => :delete}
+- content_for :side do
+  = link_to "创建新站点", new_admin_site_path, :class => "green"

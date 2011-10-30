@@ -1,0 +1,15 @@
+#lsider
+  = render :partial => "widget/app_list"
+#main
+  .main_top
+    %h2.fl 活动列表
+  .clear
+  .main_content.table.pl20.pr20
+    %ul
+      %li.title
+        %span.titles 标题
+        %span.operates 操作
+      = render @activities
+    .clear
+  .flickr_pagination= h will_paginate @activities
+.clear

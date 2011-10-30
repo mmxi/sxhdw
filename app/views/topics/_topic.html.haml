@@ -1,0 +1,21 @@
+.topic.clearfix{:id => "topic-#{topic.id}"}
+  .avatar= link_to image_tag(topic.user.photo.url(:s48), :width => 48, :height => 48, :title => topic.user.display_name), user_path(topic.user)
+  .content
+    %h3= link_to topic.title, forum_topic_path(topic.forum, topic)
+    .created
+      = link_to topic.forum.name, forum_path(topic.forum), :class => "forum"
+      •
+      \#{link_to topic.user.display_name, user_path(topic.user)} •
+      %span
+        = topic.hits
+        次点击
+      •
+      %span
+        最后回复 #{time_ago_in_words(topic.last_updated_at)} 之前
+      •
+      \#{link_to topic.last_user.display_name, user_path(topic.last_user)}
+      - if current_user == topic.user
+        • #{link_to "编辑", edit_forum_topic_path(topic.forum, topic), :class => "edit", :remote => true}
+        • #{link_to "删除", forum_topic_path(topic.forum, topic), :method => :delete, :remote => true, :confirm => "确定删除？", :class => "edit"}
+      .clear
+  .count_livid= link_to (topic.posts_count - 1).to_s, forum_topic_path(topic.forum, topic), :title => "#{topic.posts_count - 1} 个回复"

@@ -1,0 +1,29 @@
+= form_for [@forum, @topic], :html => {:class => "topic_form"} do |f|
+  = render "widget/flashmessage"
+  .clearfix.title= f.text_field :title, :class => "input_b"
+  - if @topic.new_record?
+    .clearfix.body
+      = f.text_area :body, :class => "text_b"
+    .clearfix.smiley
+      %a.sorry{:title => "抱歉"}
+      %a.despise{:title => "鄙视"}
+      %a.rage{:title => "大怒"}
+      %a.laugh{:title => "大笑"}
+      %a.happy{:title => "高兴"}
+      %a.shy{:title => "害羞"}
+      %a.asleep{:title => "酣睡"}
+      %a.grin{:title => "坏笑"}
+      %a.scared{:title => "惊恐"}
+      %a.pleasantsuprise{:title => "惊喜"}
+      %a.cry{:title => "哭"}
+      %a.puzzled{:title => "困惑"}
+      %a.bother{:title => "麻烦了"}
+      %a.strive{:title => "努力"}
+      %a.amative{:title => "色"}
+      %a.angry{:title => "生气"}
+      %a.painful{:title => "疼"}
+      %a.sad{:title => "委屈"}
+      %a.impatient{:title => "无奈"}
+      %a.faint{:title => "晕"}
+  .clearfix
+    .indent= f.submit submit_txt, :class => "button bbutton"

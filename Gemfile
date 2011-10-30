@@ -32,6 +32,13 @@ gem "RedCloth", :require => 'redcloth'
 gem 'acts_as_tree'
 gem 'execjs'
 gem 'therubyracer'
+gem 'breadcrumbs_on_rails'
+gem 'haml-rails'
+
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

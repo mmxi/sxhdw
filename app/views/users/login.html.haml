@@ -1,0 +1,24 @@
+%h2
+  您正在通过#{t('oauth.' + session[:omniauth]['provider'])}账号登陆绍兴活动网
+.clearfix
+.grid_16
+  %h2
+    = image_tag @user.face_url, :width => 48, :height => 48
+    = @user.nickname
+    ，只差一步，就可以完成登录！
+  %p 填写下面资料，即可同时使用您的第三方网站账号登录本网站，^_^
+  = form_for @user, :url => user_login_path, :html => {:class => "form"}, :validate => true do |f|
+    = render "widget/flashmessage"
+    .clearfix
+      = f.label :nickname, "昵称："
+      .input= f.text_field :nickname, :class => "input_s"
+    .clearfix
+      = f.label :login, "用户名："
+      .input= f.text_field :login, :class => "input_m"
+    .clearfix
+      = f.label :email, "邮箱："
+      .input= f.text_field :email, :class => "input_m"
+    .clearfix
+      .indent= f.submit "立即绑定", :class => "button bbutton"
+    .clearfix
+      .indent= link_to "我已经有活动网帐号，绑定帐号", user_bind_path

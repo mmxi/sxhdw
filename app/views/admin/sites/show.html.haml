@@ -1,0 +1,7 @@
+.content
+  .clearfix= @site.name
+  .clearfix= @site.host
+  .clearfix= @site.description
+  .clearfix= link_to "编辑", edit_admin_site_path
+- content_for :side do
+  = link_to "返回", admin_sites_path

@@ -1,0 +1,20 @@
+.grid_11
+  %h2 用户注册
+  = form_for @user, :html => {:class => "form"}, :validate => true do |f|
+    = render :partial => "widget/flashmessage"
+    .clearfix
+      = f.label :login, "用户名："
+      .input= f.text_field :login, :class => "input_m"
+    .clearfix
+      = f.label :email, "邮箱："
+      .input= f.text_field :email, :class => "input_m"
+    .clearfix
+      = f.label :password, "密码："
+      .input= f.password_field :password, :class => "input_m"
+    .clearfix
+      = f.label :password_confirmation, "确认密码："
+      .input= f.password_field :password_confirmation, :class => "input_m"
+    .clearfix
+      .indent= f.submit "注册", :class => "button bbutton"
+.grid_5
+  = render "widget/oauth"

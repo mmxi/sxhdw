@@ -1,0 +1,4 @@
+%h3= @page_title
+= render :partial => "form", :locals => {:submit_txt => "创建"}
+= content_for :side do
+  = link_to "返回", admin_sites_path

@@ -1,0 +1,16 @@
+#mainbar.grid_10
+  = form_for @user, :url => setting_account_path, :html => {:multipart => true, :class => "form" } do |f|
+    = render :partial => "widget/flashmessage"
+    - @user.errors.each do |attr, msg|
+      = msg
+    .clearfix
+      = f.label :nickname, "昵称："
+      .input= f.text_field :nickname, :class => "input_m"
+    .clearfix
+      = f.label :photo, "头像："
+      .file= f.file_field :photo
+    .clearfix
+      .indent= f.submit "更新设置", :class => "button bbutton"
+#sidebar.grid_6
+  %h3 个人资料
+  %p 该信息将出现在你的公开个人资料、搜索结果等地方。

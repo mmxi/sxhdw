@@ -66,6 +66,13 @@ function init_dropdownmenu(){
   });
 }
 
+function forumhover() {
+  $('.forumnav').hover(function(){
+    $(this).addClass('hover');
+  }, function(){
+    $(this).removeClass('hover');
+  });
+}
 function popupCenter(url, width, height, name) {
 	var left = (screen.width/2)-(width/2);
 	var top = (screen.height/2)-(height/2);
@@ -95,6 +102,8 @@ jQuery(document).ready(function(){
 
   $('#top-link').topLink({min: 400, fadeSpeed: 500});
   $('#top-link').click(function(e) {e.preventDefault(); $(document).scrollTop(0);});
+
+  forumhover();
 });
 
 

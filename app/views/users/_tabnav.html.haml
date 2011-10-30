@@ -1,0 +1,6 @@
+%ul.tabnav
+  %li
+    = link_to "个人资料", edit_user_url, :class => ("active" if controller.action_name == "edit")
+  %li= link_to "修改密码", change_password_user_url, :class => ("active" if controller.action_name == "change_password")
+  %li
+    %a{:href => "#"} 其它设置

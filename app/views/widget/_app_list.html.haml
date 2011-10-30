@@ -1,0 +1,14 @@
+#app_list
+  %ul
+    %li.add= link_to "创建活动", new_admin_activity_path
+    %li.database= link_to "我发布的活动", admin_activities_path
+    %li.add= link_to "创建电影"
+    %li.film
+      %a{:href => "#"} 我发布的电影
+    %li.group
+      %a{:href => "#"} 管理小组
+    %li.comment
+      %a{:href => "#"} 帖子管理
+    %li.email
+      %a{:href => "#"} 我的消息
+.clear
