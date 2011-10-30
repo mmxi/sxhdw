@@ -5,6 +5,9 @@
 @label-color:#666;
 @red-color:#FE2617;
 @border-color:#EFE0D7;
+@red-color:#DD4B39;
+@pink-color:#F69EC6;
+@blue-color:#0E385F;
 
 h1, h2, h3, h4, h5, h6{font-size:100%;}
 body{height:100%;background:#fff;font:12px/1.5em "\5b8b\4f53","Arial Narrow"; -webkit-text-size-adjust:none;}
@@ -22,7 +25,7 @@ h1,h2,h3{ color:@title-color; }
 .green{ color:@green-color; }
 .red{color:@red-color; }
 
-#top-link  { display:inline-block; position:fixed; right:10px; bottom:10px; width:50px; height:50px; background:url(../images/scroll-to-top.gif) no-repeat; text-indent:-9999px; }
+#top-link  { display:inline-block; position:fixed; right:10px; bottom:10px; width:50px; height:50px; background:url(../images/scroll-to-top.gif) no-repeat; }
 
 /* message */
 .msg{ display:block; margin:10px 10px; padding:10px 10px; border-radius:5px 5px 5px 5px; font-weight:bold; }
@@ -128,16 +131,19 @@ ul.table li a.subforum { margin-left:40px; }
 .forumnav h2.shopping{background:url(../images/forums/shoppingcart.png) center 0px no-repeat; }
 .forumnav h2.car{background:url(../images/forums/car.png) center 0px no-repeat; }
 .forumnav h2.man{background:url(../images/forums/man.png) center 0px no-repeat; }
+.forumnav .forums{font-weight:bold; font-size:14px; color:#369;}
+.forumnav .current{color:@red-color; font-weight:bold;}
 
 
 /* topic */
 .topic { padding:10px; border-bottom:1px solid @border-color; }
+.topics .hover{background: #eeeeee;}
 .topic .avatar{width:48px; height:48px; float:left; }
 .topic .content{ float:left; width:500px; }
-.topic .content h3{ font-size:16px; font-weight:normal; margin:0px; }
-.topic .content .created{ font-size:10px; color:lighten(@gray-color, 20%); }
-.topic .content .created a{ color:@gray-color; }
-.topic .content .created .forum{ padding:4px; background:lighten(@gray-color, 40%); line-height:10px; display:inline-block; border-radius:5px; }
+.topic .content h3{ font-size:14px; font-weight:normal; margin:0px; }
+.topic .content .created{ font-size:11px; color:lighten(@gray-color, 20%); margin-top:10px; }
+.topic .content .created a{ color:@gray-color; font-size:12px; }
+.topic .content .created .forum{ padding:0px 5px; background:lighten(@gray-color, 40%); display:inline-block; border-radius:5px; }
 .topic .content .created .forum:hover{ text-decoration:none; background:lighten(@gray-color, 30%); }
 .topic .content .created .edit{ padding:4px; background:lighten(@gray-color, 40%); line-height:10px; display:inline-block; border-radius:5px; color:darken(@link-color, 10%); }
 .topic .content .created .edit:hover{ text-decoration:none; background:lighten(@gray-color, 30%); }
@@ -201,6 +207,10 @@ height: 30px;
 .breadcrumb{ height:26px; background:#F0F0F0 url(../images/home.gif) 5px center no-repeat; margin:20px 0px; padding-left:25px; color:@gray-color; }
 .breadcrumb a{ display:inline-block; line-height:26px; padding-right:15px; margin-right:10px;  background:#F0F0F0 url(../images/separator.gif) right 0px no-repeat; }
 
+/* .component */
+.component h2{font-size:16px; color:@gray-color; padding:5px; background:#F2F2F2; margin-bottom:10px; }
+.component .hot_forums a{ float:left; margin:0px 5px 10px 0px; background:lighten(@gray-color, 40%); padding:3px 5px; border-radius: 5px; }
+.component .hot_forums a:hover{background:lighten(@gray-color, 20%);}
 
 #main h2{ margin:20px 0px 20px 20px; }
 #main h2 img{ margin-right: 10px; }
