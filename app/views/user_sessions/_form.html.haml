@@ -1,10 +1,10 @@
-= form_for @user_session, :html => {:class => "form"} do |f|
+= form_for @user_session, :html => {:class => "front_form login_box"} do |f|
+  = render "widget/flashmessage"
   .clearfix
-    = render "widget/flashmessage"
     = f.label :login, "用户名或邮箱："
-    .input= f.text_field :login, :class => "input_m"
+    = f.text_field :login, :class => "input_m"
   .clearfix
     = f.label :password, "密码："
-    .input= f.password_field :password, :class => "input_m"
+    = f.password_field :password, :class => "input_m"
   .clearfix
-    .indent= f.submit "登录", :class => "button bbutton"
+    = sex_button_tag "登录", :type => "submit", :class => "blue-button"

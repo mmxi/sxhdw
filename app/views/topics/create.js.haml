@@ -1,5 +1,12 @@
 - @topic.reload
-$.facebox.close();
-$(document).scrollTop(0);
-$('div.topics').prepend("#{escape_javascript render(:partial => @topic)}");
-$('#topic-#{@topic.id}').effect("highlight", {color:"#b1b1b1"}, 3000);
+:plain
+  if($.browser.msie) {
+    $('#topics').prepend(innerShiv("#{escape_javascript render(:partial => @topic)}"));
+  } else {
+    $('#topics').prepend("#{escape_javascript render(:partial => @topic)}");
+  }
+  $('#dialog-overlay, .dialog-box').hide();
+  $('#topic-#{@topic.id}').effect("highlight", {color:"#b1b1b1"}, 3000);
+  $(document).scrollTop(0);
+  $('#topic_title').val("");
+  editor.html("");

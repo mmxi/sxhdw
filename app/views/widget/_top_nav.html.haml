@@ -1,11 +1,8 @@
-#topnav
+%nav#topnav
   %ul.fl
     %li= link_to "首页", root_path
     %li= link_to "论坛", forums_path
-    %li= link_to "客服中心"
-    %li= link_to "最新分享"
-    %li= link_to "最新活动"
-  %ul.dropdown.fr
+  %ul.fr
     - if current_user.blank?
       %li 欢迎您，游客
       %li= link_to "会员登录", login_path
@@ -15,12 +12,9 @@
       %li
         %span.icon.sina
         = link_to "微博登录", "/auth/tsina", :class => "popup", :"data-width" => 600, :"data-height" => 400
-      %li.menu
-        %a{:href => "javascript:void(0)"} 其它方式
-        %span.arrow
-        %dl{:style => "visibility:hidden;"}
-          %dt.first
-            %a{:href => "javascript:void(0)"} 其它方式
+      %li.dropdown_menu
+        %a{:href => "javascript:void(0)", :class => "menu_t"} 其它方式<b></b>
+        %dl{:style => "display: none;"}
           %dd
             %span.icon.renren
             = link_to "人人帐号", "/auth/renren", :class => "popup", :"data-width" => 600, :"data-height" => 400
@@ -35,14 +29,13 @@
             = link_to "谷歌帐号", "/auth/google", :class => "popup", :"data-width" => 900, :"data-height" => 500
       %li= link_to "免费注册", signup_path, :class => "register"
     - else
-      %li.tinyman.menu
+      %li.tinyman
         = image_tag(current_user.photo(:s24))
         = link_to current_user.display_name, "javascript:void(0);"
-        %span.arrow
-        %dl{:style => "visibility:hidden;"}
+      %li.dropdown_menu
+        %a{:href => "javascript:void(0)", :class => "menu_t"} 帐号信息<b></b>
+        %dl{:style => "display: none;"}
           %dd= link_to "个人中心", user_path(current_user)
           %dd= link_to "编辑资料", edit_setting_account_path
-          %dd= link_to "站点管理", admin_sites_path
-      %li= link_to "发布活动", new_admin_activity_path
       %li= link_to "退出", logout_path
   .clear

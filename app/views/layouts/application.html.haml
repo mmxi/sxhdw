@@ -1,9 +1,48 @@
 !!!
-%html
+%html{:lang => "zh-CN"}
   %head
-    %title Sxhdw
-    = stylesheet_link_tag :all
-    = javascript_include_tag :defaults
+    %title= "#{@page_title + ' - ' if @page_title}#{current_site.name}"
+    %meta{:name => "keywords", :content => "#{@meta_keywords if @meta_keywords}"}
+    %meta{:name => "description", :content => "#{@meta_description if @meta_description}"}
+    %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = include_kindeditor_if_needed
+    /[if lt IE 9]
+      = javascript_include_tag "html5"
+      = javascript_include_tag "innershiv"
+      = javascript_include_tag "PIE"
+      = javascript_include_tag "button"
+    /[if lt IE 7]
+      = javascript_include_tag "jquery.ie_hover"
+      = javascript_include_tag "pngfix"
+    = yield :head
     = csrf_meta_tag
   %body
-    = yield
+    %header
+      = render :partial => "widget/top_nav"
+      = yield :header
+    #content
+      %section#main
+        = yield
+      %aside
+        = yield :sidebar
+      = yield :content
+    %footer#footer
+      = render :partial => "widget/footer"
+      = yield :footer
+    = render :partial => "widget/loading"
+    = render :partial => "widget/dialog_message_box"
+    #dialog-overlay
+    /[if lt IE 7]
+      :javascript
+        $.fixIEHover();
+        DD_belatedPNG.fix('.png');
+    /[if lt IE 9]
+      :javascript
+        $(function() {
+          if (window.PIE) {
+            $('.pie').each(function(){ PIE.attach(this); });
+          }
+        });
+    = yield :bottom

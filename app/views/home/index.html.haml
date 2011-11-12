@@ -1,14 +1,28 @@
-= link_to "Home", root_path
-= debug current_user
-= link_to "testajax", { :action => "testajax"}, :remote => true, :id => "aaa"
-= activate_url("asdf")
-= image_tag "http://www.box.net/data/ib2/public/preview_thumb/2011-10-12/75f0857fbe39f48b7a1c8afe06c4e591.jpg"
-:javascript
-	//$('aaa').observe('ajax:before', function(){ alert("hello"); });
-	//$('edit_foo').observe('ajax:complete complete_function());
-//ajax:before   // fires before the request starts, provided a URL was provided in href or action
-//ajax:loading  // fires after the AJAX request is created, but before it's sent
-//ajax:success  // fires after a response is received, provided the response was a 200 or 300 HTTP status code
-//ajax:failure  // fires after a response is received, if the response has a 400 or 500 HTTP status code
-//ajax:complete // fires after ajax:success or ajax:failure
-//ajax:after    // fires after the request events are finished
+= sex_link_to "确定", "javascript:void(0)", :class => "green-button"
+.success_msg.pie
+  %p hello
+.error_msg.pie
+  %p hello
+.warning_msg.pie
+  %p hello
+.info_msg.pie
+  %p hello
+.test
+  %button{:class => "blue"} 很好啊
+= sex_link_to "确定", "#register_box", :class => "green-button", :rel => "mdlgbox"
+= sex_button_tag "Button", :class => "red-button", :id => "btn_box"
+
+- content_for :bottom do
+  #register_box.dialog-box
+    .dialog-content
+      .dialog-message register 
+      %a{:href => "javascript:void(0)", :class => "dialog-close-button"}
+        %img{:src => "/images/closelabel.png"}
+  :javascript
+    $(document).ready(function(){
+      $('a[rel*=mdlgbox]').mdlg_box();
+      $('#btn_box').click(function(){
+        //$.mdlg_box({div: '#box'});
+        $.mdlg_box("hello");
+      });
+    });

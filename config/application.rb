@@ -2,13 +2,22 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Sxhdw
   class Application < Rails::Application
     config.autoload_paths << "#{config.root}/lib"
+    if defined?(Bundler)
+      # If you precompile assets before deploying to production, use this line
+      Bundler.require *Rails.groups(:assets => %w(development test))
+      # If you want your assets lazily compiled in production, use this line
+      # Bundler.require(:default, :assets, Rails.env)
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -32,7 +41,7 @@ module Sxhdw
     config.i18n.default_locale = :cn
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    #config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -45,5 +54,10 @@ module Sxhdw
       g.test_framework :rspec
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
+    #config.generators.stylesheet_engine = :sass
   end
 end

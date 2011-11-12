@@ -6,6 +6,9 @@ tmp/
 /.project
 /config.ru
 /public/upload/
+/public/uploads/
 /public/uploadfiles/
 /.idea/
 /sxhdw.ids
+/.sass-cache/
+/public/assets/

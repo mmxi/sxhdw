@@ -110,7 +110,7 @@ ul.table li a.subforum { margin-left:40px; }
 
 /* setting */
 #setting_topmain{ background:#F3F3F3; border-bottom:1px solid #CCC; }
-#setting_topmain h2{ margin: 20px 0 20px 20px }
+#setting_topmain h2{ margin: 20px 0 20px 20px; font-size:16px; }
 #setting_topmain h2 img{ margin-right: 10px; }
 #setting_topmain_inner ul { height:32px; }
 #setting_topmain_inner .tabnav a{ padding:4px 10px 3px 10px; line-height:24px; border-radius: 4px 4px 0 0; border-bottom:1px solid #ccc;}
@@ -171,37 +171,40 @@ height: 30px;
 #loading .logo{ height: 30px; width: 30px; float: left; margin: 0 5px 0 10px; background: url(../images/loading.gif) no-repeat center center; }
 #loading .text{ float: left; line-height:30px; }
 
+/* .smiley */
+.smiley a{ float:left; width:48px; height:48px; display:inline-block; border:1px solid #fff; cursor:pointer; }
+.smiley a:hover{border:1px solid #ccc;}
+.smiley .sorry{background:url(../images/mantou.png) 0px; }
+.smiley .despise{background:url(../images/mantou.png) -48px; }
+.smiley .rage{background:url(../images/mantou.png) -96px; }
+.smiley .laugh{background:url(../images/mantou.png) -144px; }
+.smiley .happy{background:url(../images/mantou.png) -192px; }
+.smiley .shy{background:url(../images/mantou.png) -240px; }
+.smiley .asleep{background:url(../images/mantou.png) -288px; }
+.smiley .grin{background:url(../images/mantou.png) -336px; }
+.smiley .scared{background:url(../images/mantou.png) -384px; }
+.smiley .pleasantsuprise{background:url(../images/mantou.png) -432px; }
+.smiley .cry{background:url(../images/mantou.png) -480px; }
+.smiley .puzzled{background:url(../images/mantou.png) -528px; }
+.smiley .bother{background:url(../images/mantou.png) -576px; }
+.smiley .strive{background:url(../images/mantou.png) -624px; }
+.smiley .amative{background:url(../images/mantou.png) -672px; }
+.smiley .angry{background:url(../images/mantou.png) -720px; }
+.smiley .painful{background:url(../images/mantou.png) -768px; }
+.smiley .sad{background:url(../images/mantou.png) -816px; }
+.smiley .impatient{background:url(../images/mantou.png) -864px; }
+.smiley .faint{background:url(../images/mantou.png) -912px; }
+
 /* topic_form */
-.topic_form{ width:500px; }
+.topic_form{ }
 .topic_form .title{ margin-bottom:20px; }
-.topic_form .body{ margin-bottom:5px; }
+.topic_form .title input{width:690px;}
+.topic_form .body{ margin-bottom:20px; }
 .topic_form .input_b { width:490px; display:inline-block; float:left; height:22px; line-height:22px; padding:3px 4px 3px 4px; border:1px solid #DAD6D3; background:#F7F7F7; border-radius:3px; }
-.topic_form .text_b { width:490px; display:inline-block; float:left; height:140px; line-height:22px; padding:3px 4px 3px 4px; border:1px solid #DAD6D3; background:url(../images/textarea_bg3.jpg) -80px 0px no-repeat; border-radius:3px; font-size:12px; }
+.topic_form .text_b { width:490px; display:inline-block; float:left; height:140px; line-height:22px; padding:3px 4px 3px 4px; border:1px solid #DAD6D3; border-radius:3px; font-size:12px; }
 .topic_form .indent input{ float:right; }
-.topic_form .smiley{ margin-bottom:20px; }
-.topic_form .smiley a{ float:left; width:48px; height:48px; display:inline-block; border:1px solid #fff; cursor:pointer; }
-.topic_form .smiley a:hover{border:1px solid #ccc;}
-.topic_form .smiley .sorry{background:url(../images/mantou.png) 0px; }
-.topic_form .smiley .despise{background:url(../images/mantou.png) -48px; }
-.topic_form .smiley .rage{background:url(../images/mantou.png) -96px; }
-.topic_form .smiley .laugh{background:url(../images/mantou.png) -144px; }
-.topic_form .smiley .happy{background:url(../images/mantou.png) -192px; }
-.topic_form .smiley .shy{background:url(../images/mantou.png) -240px; }
-.topic_form .smiley .asleep{background:url(../images/mantou.png) -288px; }
-.topic_form .smiley .grin{background:url(../images/mantou.png) -336px; }
-.topic_form .smiley .scared{background:url(../images/mantou.png) -384px; }
-.topic_form .smiley .pleasantsuprise{background:url(../images/mantou.png) -432px; }
-.topic_form .smiley .cry{background:url(../images/mantou.png) -480px; }
-.topic_form .smiley .puzzled{background:url(../images/mantou.png) -528px; }
-.topic_form .smiley .bother{background:url(../images/mantou.png) -576px; }
-.topic_form .smiley .strive{background:url(../images/mantou.png) -624px; }
-.topic_form .smiley .amative{background:url(../images/mantou.png) -672px; }
-.topic_form .smiley .angry{background:url(../images/mantou.png) -720px; }
-.topic_form .smiley .painful{background:url(../images/mantou.png) -768px; }
-.topic_form .smiley .sad{background:url(../images/mantou.png) -816px; }
-.topic_form .smiley .impatient{background:url(../images/mantou.png) -864px; }
-.topic_form .smiley .faint{background:url(../images/mantou.png) -912px; }
 .topic_form .floading { width:400px; float:left; text-align:right; line-height:23px; }
+#facebox .topic_form .title input{width:490px;}
 
 /* .breadcrumb */
 .breadcrumb{ height:26px; background:#F0F0F0 url(../images/home.gif) 5px center no-repeat; margin:20px 0px; padding-left:25px; color:@gray-color; }
@@ -212,10 +215,11 @@ height: 30px;
 .component .hot_forums a{ float:left; margin:0px 5px 10px 0px; background:lighten(@gray-color, 40%); padding:3px 5px; border-radius: 5px; }
 .component .hot_forums a:hover{background:lighten(@gray-color, 20%);}
 
-#main h2{ margin:20px 0px 20px 20px; }
+
+#main h2{ margin:20px 0px 20px 20px; font-size:16px; }
 #main h2 img{ margin-right: 10px; }
 
-#footer{ border-top:1px dashed #999; }
+#footer{ margin-top:20px; border-top:1px dashed #999; }
 #footer_inner{
 	margin-top: 10px;
 	ul{
@@ -242,3 +246,5 @@ body:after{
   content: url(../images/mantou.png);
   display: none;
 }
+
+.new_topic_sidebar{padding-top:95px;}

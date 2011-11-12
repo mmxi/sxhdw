@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -41,9 +42,9 @@ ActiveRecord::Schema.define(:version => 20111025123833) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
+    t.string   "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "forums", :force => true do |t|

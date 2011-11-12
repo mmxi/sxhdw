@@ -1,26 +1,59 @@
-= render :partial => "forumnav"
-.grid_11
-  = render :partial => "widget/flashmessage"
-  .topics
-    = render @topics
-.grid_5
-  #info{:style => "display: none;"}
-    - if logged_in?
-      = render :partial => "topics/form_a", :locals => {:submit_txt => "发布帖子"}
-    - else
-      = render :partial => "user_sessions/form_a"
-  = link_to "发帖", new_forum_topic_path(@forum)
-  %a{:href => "#info", :rel => "facebox"} 发帖
+- @page_title = @forum.name
+- @meta_keywords = @forum.name
+- @meta_description = @forum.description
+
+- content_for :head do
+  :css
+    .ke-container-default .ke-toolbar{background:#fff; padding:0px; border:none; height:0px;}
+    #new_topic{padding-top:5px;}
+    #topic_title{width:490px;}
+    .floading{padding:9px 0; margin-left:10px; line-height:0px; color:#369;}
+    .forum_navs ul li{width:940px}
   :javascript
-    jQuery(document).ready(function($) {
-      $(document).bind('reveal.facebox', function(){
-        $('div.smiley a').click(function(){
-          $("#facebox textarea").insertAtCaret('[em:' + this.className + ']');
-        });
-        $('#facebox textarea').keydown(function (e) {
-          if (e.ctrlKey && e.keyCode == 13) {
-            alert("hello");
-          }
-        });
-      })
+    var editor;
+    $(document).ready(function($) {
+      keoption['width'] = "500px";
+      keoption['height'] = "200px";
+      keoption['items'] = [];
+      KindEditor.ready(function(K){
+        editor = K.create('#kindeditor_id', keoption);
+      });
+      $('div.smiley a').click(function(){
+        editor.insertHtml("<img src='/images/mantou/" + this.id + ".jpg' />");
+      });
+      $('div.smiley a').hover(function(){$(this).addClass('hover');}, function(){$(this).removeClass('hover');});
+
+      $('#new_topic button').click(function(){
+        editor.sync();
+      });
     });
+
+- content_for :header do
+  = render :partial => "forumnav"
+
+= render :partial => "widget/flashmessage"
+#topics
+  = render @topics
+.apple_pagination
+  = will_paginate(@topics, :container => false, :remote => true)
+  :javascript
+    $('.apple_pagination a').attr('data-remote', 'true');
+
+- content_for :sidebar do
+  %section.public_buttons
+    = sex_link_to "创建话题", new_forum_topic_path(@forum), :class => "blue-button"
+    = sex_link_to "快速创建话题", "#new_topic_box", :class => "red-button", :rel => "mdlgbox"
+
+- content_for :bottom do
+  #new_topic_box.dialog-box
+    .dialog-content
+      - if logged_in?
+        = render :partial => "topics/form_a", :locals => {:submit_txt => "发布帖子"}
+      - else
+        = render :partial => "user_sessions/form_a"
+      %a{:href => "javascript:void(0)", :class => "dialog-close-button"}
+        %img{:src => "/images/closelabel.png"}
+  :javascript
+    $(document).ready(function(){
+      $('a[rel*=mdlgbox]').mdlg_box();
+    });  

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Notifier < ActionMailer::Base
   def activation_instructions(user)
     subject       "请激活你的帐号，完成注册"

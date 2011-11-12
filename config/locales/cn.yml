@@ -94,3 +94,8 @@ cn:
       over_x_years:
         one: 'over 1 year'
         other: '%{count} 年'
+
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"
+    page_gap: "&hellip;"

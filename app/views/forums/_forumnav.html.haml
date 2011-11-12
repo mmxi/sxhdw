@@ -1,8 +1,8 @@
-.forumsnav
-  - @parent_forums.each do |pforums|
-    .grid_8.forumnav
-      %h2{:class => "icon #{pforums.css_name}"}
-        %strong= pforums.name
-      - pforums.children.each do |sforums|
-        = link_to sforums.name, forum_path(sforums)
-  .clear
+%nav.forum_navs
+  %ul
+    %li
+      %h2{:class => "png #{@forum.parent.css_name}"}
+        %strong= @forum.parent.name
+      = link_to "论坛", forums_path, :class => "forums"
+      - @forum.parent.children.each do |sforum|
+        = link_to sforum.name, forum_path(sforum), :class => "#{ 'current' if sforum == @forum}"

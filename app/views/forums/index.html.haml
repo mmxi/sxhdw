@@ -1,9 +1,23 @@
-- content_for :forumnav do
+- @page_title = "论坛"
+
+- content_for :head do
+  :css
+    .front_form{padding-top:5px;}
+    #topic_title{width:490px;}
+    .floading{padding:9px 0; margin-left:10px; line-height:0px; color:#369;}
+- content_for :header do
   = render :partial => "forumnavs"
-.grid_11
-  #topics.topics
-    = render @topics
-  = will_paginate(@topics)
-  = pageless(@topics.total_pages, forums_path)
-.grid_5
-  = link_to "ajax测试", forums_path, :remote => true
+
+#topics
+  = render @topics
+.apple_pagination
+  = will_paginate(@topics, :container => false, :remote => true)
+  :javascript
+    $('.apple_pagination a').attr('data-remote', 'true');
+
+- content_for :sidebar do
+  %section.hot_forums
+    %h2 热门版块
+    %nav
+      - hot_forums.each do |forum|
+        = link_to forum.name, forum_path(forum)

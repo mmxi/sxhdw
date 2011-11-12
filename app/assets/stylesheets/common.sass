@@ -1,0 +1,339 @@
+$green-color: #6BA025
+$link-color: #336699
+$gray-color: #808080
+$title-color: #1C2A47
+$label-color: #666666
+$red-color: #FE2617
+$border-color: #EFE0D7
+$red-color: #DD4B39
+$pink-color: #F69EC6
+$blue-color: #0E385F
+
+body
+  font: 12px/1.5 "\5b8b\4f53", "Arial Narrow"
+  text-decoration: none
+a
+  display: inline-block
+  color: $link-color
+  text-decoration: none
+
+small
+  font-family: Arial
+  font-size: 10px
+// fl fr
+.fl
+  float: left
+.fr
+  float: right
+
+#main h2
+  font-size: 16px
+  font-weight: bold
+  height: 30px
+  line-height: 30px
+  color: #333
+
+article, aside, div, form, header, nav, section, ul
+  zoom: 1
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    visibility: hidden
+
+.cf
+  zoom: 1
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    visibility: hidden
+
+// message
+.msg
+  display: block
+  margin: 10px 10px
+  padding: 10px 10px
+  font-weight: bold
+  +border-radius(5px)
+.error_msg
+  @extend .msg
+  background: #FDCEA4
+  border: 1px solid #C44509
+  color: #E3302C
+.success_msg
+  @extend .msg
+  background: #D4F684
+  border: 1px solid #739F1D
+  color: #508600
+.warning_msg
+  @extend .msg
+  background: #FEFFC8
+  border: 1px solid #F1AA2D
+  color: #666666
+.info_msg
+  @extend .msg
+  background: #C3E4FD
+  border: 1px solid #688FDC
+  color: #0888C3
+
+// loading
+.loading
+  +border-radius(0 5px 5px 0)
+  background: #999
+  +opacity(0.8)
+  color: #fff
+  font-weight: bold
+  position: fixed
+  top: 200px
+  _position: absolute
+  _top: expression(documentElement.scrollTop + 200 + "px")
+  padding-right: 10px
+  left: 0
+  height: 30px
+  .logo
+    height: 30px
+    width: 30px
+    float: left
+    margin: 0 5px 0 10px
+    background: url(../images/loading.gif) no-repeat center center
+  .text
+    float: left
+    line-height: 30px
+.smiley
+  a
+    display: inline-block
+    float: left
+    width: 48px
+    height: 48px
+    border: 1px solid #fff
+    cursor: pointer
+    &:hover
+      border: 1px solid #ccc
+    &.hover
+      border: 1px solid #ccc
+    &#sorry
+      background: url(../images/mantou.png) 0px
+    &#despise
+      background: url(../images/mantou.png) -48px
+    &#rage
+      background: url(../images/mantou.png) -96px
+    &#laugh
+      background: url(../images/mantou.png) -144px
+    &#happy
+      background: url(../images/mantou.png) -192px
+    &#shy
+      background: url(../images/mantou.png) -240px
+    &#asleep
+      background: url(../images/mantou.png) -288px
+    &#grin
+      background: url(../images/mantou.png) -336px
+    &#scared
+      background: url(../images/mantou.png) -384px
+    &#pleasantsuprise
+      background: url(../images/mantou.png) -432px
+    &#cry
+      background: url(../images/mantou.png) -480px
+    &#puzzled
+      background: url(../images/mantou.png) -528px
+    &#bother
+      background: url(../images/mantou.png) -576px
+    &#strive
+      background: url(../images/mantou.png) -624px
+    &#amative
+      background: url(../images/mantou.png) -672px
+    &#angry
+      background: url(../images/mantou.png) -720px
+    &#painful
+      background: url(../images/mantou.png) -768px
+    &#sad
+      background: url(../images/mantou.png) -816px
+    &#impatient
+      background: url(../images/mantou.png) -864px
+    &#faint
+      background: url(../images/mantou.png) -912px
+
+// tag
+=tag
+  display: inline-block
+  color: darken($gray-color, 10%)
+  padding: 0px 5px
+  *padding-top: 2px
+  background: lighten($gray-color, 40%)
+  +border-radius(3px)
+  &:hover
+    background: lighten($gray-color, 30%)
+
+
+// topnav
+#topnav
+  height: 30px
+  line-height: 30px
+  padding: 0 20px
+  background: #FFF9F1
+  border-bottom: 1px solid $border-color
+  ul
+    &.fl
+      li
+        margin-right: 10px
+    &.fr
+      li
+        margin-left: 10px
+        &.tinyman
+          img
+            float: left
+            margin: 3px 10px 0 0
+          a
+            float: left
+    li
+      float: left
+      color: $gray-color
+      a
+        display: inline-block
+      .register
+        color: $green-color
+        font-weight: bold
+      &.dropdown_menu
+        position: relative
+        a
+          &.menu_t
+            display: block
+            position: relative
+            border-width: 1px 1px 0 1px
+            border-style: solid
+            border-color: #FFF9F1
+            padding: 0 22px 0 10px
+            margin-top: 6px
+            height: 21px
+            +min-width(48px)
+            line-height: 17px
+            z-index: 10002
+            b 
+              display: block
+              width: 0px
+              height: 0px
+              line-height: 0px
+              position: absolute
+              top: 5px
+              right: 9px
+              border-width: 4px
+              border-style: solid
+              border-color: #666666 #FFF9F1 #FFF9F1
+          &.menu_hover
+            display: block
+            border-width: 1px 1px 0 1px
+            border-style: solid
+            border-color: $border-color
+            background: #ffffff
+            b
+              border-color: #FFF9F1 #FFF9F1 #666666
+              font-size: 0
+        dl
+          width: 100px
+          position: absolute
+          right: 0
+          top: 27px
+          border: 1px solid $border-color
+          background: #ffffff
+          z-index: 10001
+
+// forum_navs
+$ninesixty-columns: 16
+.forum_navs
+  +grid-container
+  margin-top: 20px
+  ul
+    li
+      +grid(8)
+      margin-bottom: 5px
+      padding-top: 5px
+      background: #f8f8f8
+      +border-radius(5px)
+      &:hover
+        background: #f0f0f0
+      h2
+        width: 48px
+        height: 48px
+        float: left
+        text-align: center
+        background: url(../images/forums/games.png) center 0px no-repeat
+        &.business
+          background: url(../images/forums/scales.png) center 0px no-repeat
+        &.xiuxian
+          background: url(../images/forums/games.png) center 0px no-repeat
+        &.school
+          background: url(../images/forums/school.png) center 0px no-repeat
+        &.shopping
+          background: url(../images/forums/shoppingcart.png) center 0px no-repeat
+        &.car
+          background: url(../images/forums/car.png) center 0px no-repeat
+        &.man
+          background: url(../images/forums/man.png) center 0px no-repeat
+        strong
+          display: inline-block
+          margin-top: 28px
+          color: $gray-color
+      a
+        margin-right: 5px
+        &.forums
+          font-size: 14px
+          font-weight: bold
+        &.current
+          font-size: 14px
+          font-weight: bold
+          color: $red-color
+
+// topic
+#topics
+  article
+    padding: 10px
+    border-bottom: 1px solid $border-color
+    &:hover
+      background: #eee
+    .avatar
+      width: 48px
+      height: 48px
+      float: left
+      margin-right: 10px
+    .count_livid
+      float: right
+      a
+        padding: 0px 5px
+        background: lighten($gray-color, 10%)
+        +border-radius(3px)
+        font-weight: bold
+        font-size: 14px
+        color: #fff
+        text-decoration: none
+        &:hover
+          background: darken($gray-color, 20%)
+    .content
+      float: left
+      width: 520px
+      header
+        font-size: 14px
+      footer
+        float: left
+        margin-top: 10px
+        color: $gray-color
+        font-size: 11px
+        a
+          +tag
+          margin: 0px
+          font-size: 12px
+          background: lighten($gray-color, 45%)
+          color: $gray-color
+
+// hot fourms section
+.hot_forums
+  a
+    +tag
+    margin-bottom: 5px
+
+aside
+  section.public_buttons a
+    float: left
+    &.blue-button
+      margin-right: 40px

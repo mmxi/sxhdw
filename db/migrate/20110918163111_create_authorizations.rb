@@ -4,7 +4,7 @@ class CreateAuthorizations < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.integer :user_id
-      t.string  :image
+      t.string  :avatar
       t.timestamps
     end
   end

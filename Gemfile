@@ -20,7 +20,7 @@ gem 'factory_girl_rails', '~> 1.2.0'
 gem 'rspec-rails'
 gem 'client_side_validations'
 gem 'carrierwave'
-gem 'rails_kindeditor', '~> 0.2.0'
+gem 'rails_kindeditor', '~> 0.2.2'
 gem 'will_paginate'
 gem 'paperclip'
 gem 'spork', '~> 0.9.0.rc'
@@ -34,14 +34,27 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'breadcrumbs_on_rails'
 gem 'haml-rails'
+gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
+gem 'compass-960-plugin', :require => 'ninesixty' 
+gem 'fancy-buttons'
+
+group :assets do
+  gem 'sass-rails',   '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
 
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'

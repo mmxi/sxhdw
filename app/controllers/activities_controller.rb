@@ -1,7 +1,6 @@
 # encoding: utf-8
 class ActivitiesController < ApplicationController
   before_filter :require_user, :only => [:join]
-  layout "home"
 
   def index
     @activities = Activity.all

@@ -2,10 +2,10 @@
 class TopicsController < ApplicationController
   before_filter :require_user, :only => [:new, :create]
   before_filter :find_forum
-  before_filter :find_topic, :only => [:show, :edit, :update, :destroy]
-  
-  layout "home"
+  before_filter :find_topic, :only => [:show, :edit, :update]
 
+  include_kindeditor :only => [:new, :edit]
+  
   def new
     @topic = @forum.topics.new
   end
@@ -29,7 +29,14 @@ class TopicsController < ApplicationController
         format.html { redirect_to forum_topic_path(@forum, @topic) }
         format.js
       else
-        format.html { render :action => "new" }
+        format.html do
+          output = ''
+          @topic.errors.each do |attr, error|
+            output << error
+          end
+          flash[:error] = output
+          redirect_to new_forum_topic_path(@forum)
+        end
       end
     end
   end
@@ -50,6 +57,7 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+    @topic = current_user.topics.find_by_permalink!(params[:id])
     @topic.destroy
     respond_to do |format|
       format.html do

@@ -1,3 +1,8 @@
-$('#topic-#{@topic.id}').replaceWith("#{escape_javascript(render :partial => @topic)}");
-$.facebox.close();
-$('#topic-#{@topic.id}').effect("highlight", {color:"#b1b1b1"}, 3000);
+:plain
+  if($.browser.msie) {
+    $('#topic-#{@topic.id}').replaceWith(innerShiv("#{escape_javascript(render :partial => @topic)}"));
+  } else {
+    $('#topic-#{@topic.id}').replaceWith("#{escape_javascript(render :partial => @topic)}");
+  }
+  $('#dialog-overlay, .dialog-box').hide();
+  $('#topic-#{@topic.id}').effect("highlight", {color:"#b1b1b1"}, 3000);

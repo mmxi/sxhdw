@@ -37,6 +37,6 @@ Sxhdw::Application.routes.draw do
     resources :forums
   end
   
-  root :to => "home#index"
+  root :to => "forums#index"
   match ':controller(/:action(/:id(.:format)))'
 end

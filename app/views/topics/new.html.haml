@@ -1,2 +1,47 @@
-%h2 发布帖子
-= render :partial => "form", :locals => {:submit_txt => "发布帖子"}
+- content_for :head do
+  = include_facebox
+  = include_kindeditor_if_needed
+  :javascript
+    $(document).ready(function($) {
+      keoption['width'] = "698px";
+      var editor; KindEditor.ready(function(K){
+        editor = K.create('#kindeditor_id', keoption);
+      });
+      $('div.smiley a').click(function(){
+        editor.insertHtml("<img src='/images/mantou/" + this.className + ".jpg' />");
+      });
+      $('#new_topic').bind('submit', function(){
+        if(editor.count() <= 6) {
+          $.facebox('<font color="red">内容太少了，你就不想说点什么</font>');
+          return false;
+        }
+      });
+    });
+
+#main.grid_12
+  %h2 发布帖子
+  = render :partial => "form", :locals => {:submit_txt => "发布帖子"}
+
+- content_for :sidebar do
+  .grid_4.new_topic_sidebar
+    .clearfix.smiley
+      %a.sorry{:title => "抱歉"}
+      %a.despise{:title => "鄙视"}
+      %a.rage{:title => "大怒"}
+      %a.laugh{:title => "大笑"}
+      %a.happy{:title => "高兴"}
+      %a.shy{:title => "害羞"}
+      %a.asleep{:title => "酣睡"}
+      %a.grin{:title => "坏笑"}
+      %a.scared{:title => "惊恐"}
+      %a.pleasantsuprise{:title => "惊喜"}
+      %a.cry{:title => "哭"}
+      %a.puzzled{:title => "困惑"}
+      %a.bother{:title => "麻烦了"}
+      %a.strive{:title => "努力"}
+      %a.amative{:title => "色"}
+      %a.angry{:title => "生气"}
+      %a.painful{:title => "疼"}
+      %a.sad{:title => "委屈"}
+      %a.impatient{:title => "无奈"}
+      %a.faint{:title => "晕"}

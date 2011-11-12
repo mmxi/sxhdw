@@ -9,7 +9,6 @@ class Admin::ForumsController < ApplicationController
 
   def new
     @forum = current_site.forums.new
-    @page_title = "创建新版块"
   end
 
   def edit

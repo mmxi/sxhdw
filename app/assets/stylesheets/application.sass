@@ -1,0 +1,48 @@
+@import compass/reset 
+@import 960/grid
+@import compass/css3
+@import compass/utilities
+@import mdlgbox
+@import common
+@import button
+@import form
+@import pagination
+
+$ninesixty-columns: 16
+.container_12
+  +grid-system(12)
+.container_16
+  +grid-system(16)
+$green: darken(#57b42c, 8)
+$blue: adjust_hue($green, 110)
+$red: adjust_hue($green, -100)
+$heart_button: saturate(lighten($red, 2), 20)
+
+$green-color: #6BA025
+$link-color: #369
+$gray-color: #808080
+$title-color: #1C2A47
+$label-color: #666
+$red-color: #FE2617
+$border-color: #EFE0D7
+$red-color: #DD4B39
+$pink-color: #F69EC6
+$blue-color: #0E385F
+
+//layout
+#content
+  +grid-container
+  margin-top: 20px
+#main
+  +grid(11)
+aside
+  +grid(5)
+  h2
+    font-size: 14px
+    line-height: 34px
+    font-weight: bold
+    color: #3e4415
+#footer
+  +grid-container
+
+
